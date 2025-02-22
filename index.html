@@ -20,53 +20,59 @@
             color: #ffffff;
             font-family: Arial, sans-serif;
         }
-        .menu-icon {
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            display: none; /* يتم إخفاء جميع الأقسام مبدئيًا */
+        }
+        .active {
+            display: block; /* عرض القسم النشط فقط */
+        }
+        .menu-toggle {
             position: fixed;
             top: 20px;
             left: 20px;
             font-size: 24px;
             cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            border-radius: 50%;
+            background: none;
+            border: none;
+            color: white;
         }
         .menu {
-            display: none;
             position: fixed;
-            top: 60px;
+            top: 50px;
             left: 20px;
             background: rgba(0, 0, 0, 0.8);
             padding: 10px;
             border-radius: 5px;
+            display: none;
         }
         .menu a {
             display: block;
             color: white;
             text-decoration: none;
-            padding: 5px;
+            padding: 5px 10px;
         }
-        .section {
-            display: none;
-            padding: 20px;
-        }
-        #home {
-            display: block;
+        .menu a:hover {
+            background: #333;
         }
     </style>
 </head>
 <body>
-    <div class="menu-icon" onclick="toggleMenu()">
-        <i class="fas fa-home"></i>
-    </div>
+    <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-home"></i></button>
     <div class="menu" id="menu">
-        <a href="#" onclick="showSection('home')">الرئيسي</a>
+        <a href="#" onclick="showSection('main')">الرئيسي</a>
         <a href="#" onclick="showSection('private')">خاص</a>
     </div>
-    <div class="section" id="home">
-        <h1>مرحبًا بك في الصفحة الرئيسية</h1>
+    <div id="main" class="container active">
+        <h1>مرحبًا بك في القسم الرئيسي</h1>
+        <p>هذا هو القسم الرئيسي الذي يظهر عند فتح الموقع.</p>
     </div>
-    <div class="section" id="private">
+    <div id="private" class="container">
         <h1>قسم خاص</h1>
+        <p>سيتم إضافة المحتوى هنا لاحقًا.</p>
     </div>
     <script>
         function toggleMenu() {
@@ -74,9 +80,9 @@
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
         }
         function showSection(sectionId) {
-            var sections = document.querySelectorAll(".section");
-            sections.forEach(section => section.style.display = "none");
-            document.getElementById(sectionId).style.display = "block";
+            var sections = document.querySelectorAll(".container");
+            sections.forEach(section => section.classList.remove("active"));
+            document.getElementById(sectionId).classList.add("active");
         }
     </script>
 </body>
