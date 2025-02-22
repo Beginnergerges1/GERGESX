@@ -3,60 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="جرجس أشرف">
+    <meta property="og:image" content="profile-image.jpg">
     <title>جرجس أشرف</title>
     <style>
         body {
             background-image: url('background.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
             text-align: center;
-            font-family: Arial, sans-serif;
             color: white;
+            font-family: Arial, sans-serif;
         }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
+        .profile-container {
+            margin-top: 50px;
         }
-        .profile-img {
+        .profile-image {
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            border: 2px solid white;
+            border: 3px solid white;
         }
-        .social-links {
+        .links {
             margin-top: 20px;
         }
-        .social-links a {
+        .link-button {
             display: block;
+            width: 200px;
+            margin: 10px auto;
             padding: 10px;
-            margin: 5px;
             border-radius: 5px;
             text-decoration: none;
+            font-size: 18px;
+            color: white;
             font-weight: bold;
         }
-        .tiktok { background-color: black; color: white; }
-        .whatsapp { background-color: #25D366; color: white; }
-        .facebook { background-color: #1877F2; color: white; }
-        .instagram { background-color: #E4405F; color: white; }
-        .whatsapp-group { background-color: #128C7E; color: white; }
+        .tiktok { background-color: black; }
+        .whatsapp { background-color: green; }
+        .facebook { background-color: blue; }
+        .instagram { background-color: red; }
+        .whatsapp-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .whatsapp-group img {
+            width: 50px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="profile.jpg" alt="Profile Image" class="profile-img">
-        <h1>مرحبًا بك في الموقع الشخصي جرجس أشرف</h1><h2>القسم الخاص</h2>
-    <a href="https://chat.whatsapp.com/HlWChtsbTAhKe5hBsKwiVl" class="whatsapp-group">جروب الواتساب</a>
-    
-    <h2>مواقع التواصل لصاحب الموقع</h2>
-    <div class="social-links">
-        <a href="#" class="tiktok">TikTok</a>
-        <a href="#" class="whatsapp">WhatsApp</a>
-        <a href="#" class="facebook">Facebook</a>
-        <a href="#" class="instagram">Instagram</a>
+    <div class="profile-container">
+        <img src="profile-image.jpg" alt="Profile Image" class="profile-image">
+        <h1>مرحبًا بك في الموقع الشخصي لجرجس أشرف</h1>
+        <h2>القسم الخاص</h2>
     </div>
-</div>
-
+    <div class="links">
+        <h3>مواقع التواصل الخاصة بصاحب الموقع</h3>
+        <a href="#" class="link-button tiktok">TikTok</a>
+        <a href="#" class="link-button whatsapp">WhatsApp</a>
+        <a href="#" class="link-button facebook">Facebook</a>
+        <a href="#" class="link-button instagram">Instagram</a>
+    </div>
+    <div class="whatsapp-group">
+        <a href="#">
+            <img src="whatsapp-group-icon.png" alt="مجموعة WhatsApp">
+        </a>
+    </div>
 </body>
 </html>
