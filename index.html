@@ -20,17 +20,17 @@
             color: #ffffff;
             font-family: Arial, sans-serif;
         }
-        .menu-toggle {
+        .menu-icon {
             position: fixed;
             top: 20px;
             left: 20px;
-            cursor: pointer;
             font-size: 24px;
-            background: none;
-            border: none;
-            color: white;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 50%;
         }
-        .menu-container {
+        .menu {
             display: none;
             position: fixed;
             top: 60px;
@@ -39,34 +39,45 @@
             padding: 10px;
             border-radius: 5px;
         }
-        .menu-container a {
+        .menu a {
             display: block;
             color: white;
             text-decoration: none;
-            padding: 5px 0;
+            padding: 5px;
         }
-        .menu-container a:hover {
-            background: rgba(255, 255, 255, 0.2);
+        .section {
+            display: none;
+            padding: 20px;
+        }
+        #home {
+            display: block;
         }
     </style>
+</head>
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <i class="fas fa-home"></i>
+    </div>
+    <div class="menu" id="menu">
+        <a href="#" onclick="showSection('home')">الرئيسي</a>
+        <a href="#" onclick="showSection('private')">خاص</a>
+    </div>
+    <div class="section" id="home">
+        <h1>مرحبًا بك في الصفحة الرئيسية</h1>
+    </div>
+    <div class="section" id="private">
+        <h1>قسم خاص</h1>
+    </div>
     <script>
         function toggleMenu() {
             var menu = document.getElementById("menu");
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll(".section");
+            sections.forEach(section => section.style.display = "none");
+            document.getElementById(sectionId).style.display = "block";
         }
     </script>
-</head>
-<body>
-    <button class="menu-toggle" onclick="toggleMenu()">
-        <i class="fas fa-home"></i>
-    </button>
-    <div class="menu-container" id="menu">
-        <a href="#">الرئيسية</a>
-        <a href="#">خاص</a>
-    </div>
 </body>
 </html>
