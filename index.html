@@ -75,30 +75,30 @@
             height: 50px;
             margin: 10px auto;
             padding: 10px;
-            border: 2px solid transparent;
             border-radius: 10px;
             cursor: pointer;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            animation: slideLeft 1s ease-in-out;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
-        .platform ul li .rectangle-box:hover {
-            background-color: rgba(0, 0, 0, 0.9);
-        }
+        .platform ul li .tiktok { background-color: #000000; }
+        .platform ul li .whatsapp { background-color: #25D366; }
+        .platform ul li .facebook { background-color: #1877F2; }
+        .platform ul li .instagram { background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7); }
         .platform ul li a {
             text-decoration: none;
             font-size: 14px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .platform ul li a i {
             font-size: 24px;
-        }
-        .platform ul li a .tiktok { color: #000000; }
-        .platform ul li a .whatsapp { color: #25D366; }
-        .platform ul li a .facebook { color: #1877F2; }
-        .platform ul li a .instagram {
-            background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
         .footer {
             width: 100%;
@@ -145,10 +145,10 @@
         <div class="contact-info">
             <div class="platform">
                 <ul>
-                    <li><div class="rectangle-box"><a href="https://tiktok.com/@1devil2slayer"><i class="fab fa-tiktok tiktok"></i> TikTok</a></div></li>
-                    <li><div class="rectangle-box"><a href="https://wa.me/201208898875"><i class="fab fa-whatsapp whatsapp"></i> WhatsApp</a></div></li>
-                    <li><div class="rectangle-box"><a href="https://www.facebook.com/share/1WpTH3WAhf/"><i class="fab fa-facebook facebook"></i> Facebook</a></div></li>
-                    <li><div class="rectangle-box"><a href="https://www.instagram.com/luffy28178?igsh=MWk3Y25iejExdmdndg=="><i class="fab fa-instagram instagram"></i> Instagram</a></div></li>
+                    <li><div class="rectangle-box tiktok"><a href="https://tiktok.com/@1devil2slayer"><i class="fab fa-tiktok"></i> TikTok</a></div></li>
+                    <li><div class="rectangle-box whatsapp"><a href="https://wa.me/201208898875"><i class="fab fa-whatsapp"></i> WhatsApp</a></div></li>
+                    <li><div class="rectangle-box facebook"><a href="https://www.facebook.com/profile.php?id=61559121043023"><i class="fab fa-facebook"></i> Facebook</a></div></li>
+                    <li><div class="rectangle-box instagram"><a href="https://www.instagram.com/luffy28178?igsh=MWk3Y25iejExdmdndg=="><i class="fab fa-instagram"></i> Instagram</a></div></li>
                 </ul>
             </div>
         </div>
