@@ -266,6 +266,41 @@
         .zofan-page .rectangle-box:hover {
             background-color: rgba(37, 211, 102, 0.9); /* لون WhatsApp عند التحويم */
         }
+
+        /* صفحة البوت المساعد */
+        .bot-page {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .bot-page input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .bot-page button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .bot-page button:hover {
+            background-color: #0056b3;
+        }
+
+        .bot-page .result {
+            margin-top: 20px;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -287,6 +322,10 @@
                 <a href="#" onclick="showSocialPage()">
                     <i class="fas fa-share-alt"></i>
                     <span>مواقع التواصل</span>
+                </a>
+                <a href="#" onclick="showBotPage()">
+                    <i class="fas fa-robot"></i>
+                    <span>البوت المساعد</span>
                 </a>
             </div>
         </div>
@@ -350,6 +389,18 @@
                 </ul>
             </div>
         </div>
+
+        <!-- صفحة البوت المساعد -->
+        <div id="bot-page" class="bot-page">
+            <div class="bio">
+                <p>مرحبًا بك في البوت المساعد</p>
+            </div>
+            <input type="text" id="search-query" placeholder="ابحث في جوجل...">
+            <button onclick="searchGoogle()">بحث</button>
+            <input type="text" id="song-name" placeholder="اسم الأغنية...">
+            <button onclick="downloadSong()">تحميل الأغنية</button>
+            <div class="result" id="result"></div>
+        </div>
     </div>
     <div class="footer">
         <p style="color: #ffffff; font-size: 14px;background-color: rgba(0, 0, 0, 0.7);">الـحـقـوق محـفوظـه لـ  جرجس اشرف 2025 𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬 ©</p>
@@ -360,18 +411,48 @@
         function showZofanPage() {
             document.getElementById('zofan-page').style.display = 'block';
             document.getElementById('social-page').style.display = 'none';
+            document.getElementById('bot-page').style.display = 'none';
         }
 
         // وظيفة لإظهار صفحة مواقع التواصل
         function showSocialPage() {
             document.getElementById('zofan-page').style.display = 'none';
             document.getElementById('social-page').style.display = 'block';
+            document.getElementById('bot-page').style.display = 'none';
+        }
+
+        // وظيفة لإظهار صفحة البوت المساعد
+        function showBotPage() {
+            document.getElementById('zofan-page').style.display = 'none';
+            document.getElementById('social-page').style.display = 'none';
+            document.getElementById('bot-page').style.display = 'block';
         }
 
         // إظهار صفحة زوفان كصفحة رئيسية عند التحميل
         window.onload = function () {
             showZofanPage();
         };
+
+        // وظيفة البحث في جوجل
+        function searchGoogle() {
+            const query = document.getElementById('search-query').value;
+            if (query) {
+                window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+            } else {
+                alert("الرجاء إدخال نص للبحث.");
+            }
+        }
+
+        // وظيفة تحميل الأغنية (وهمية)
+        function downloadSong() {
+            const songName = document.getElementById('song-name').value;
+            if (songName) {
+                document.getElementById('result').innerText = `جارٍ تحميل الأغنية: ${songName}...`;
+                // هنا يمكنك إضافة كود لتحميل الأغنية باستخدام API معين
+            } else {
+                alert("الرجاء إدخال اسم الأغنية.");
+            }
+        }
     </script>
 </body>
 
