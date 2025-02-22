@@ -6,20 +6,18 @@
     <title>جرجس أشرف</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             text-align: center;
-            background-color: #121212;
+            font-family: Arial, sans-serif;
             color: white;
-            margin: 0;
-            padding: 0;
         }
-        .header {
-            background: url('background.jpg') no-repeat center center/cover;
-            height: 300px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
         }
         .profile-img {
             width: 100px;
@@ -27,55 +25,37 @@
             border-radius: 50%;
             border: 2px solid white;
         }
-        .links {
+        .social-links {
             margin-top: 20px;
         }
-        .links a {
+        .social-links a {
             display: block;
-            margin: 10px auto;
-            width: 200px;
             padding: 10px;
-            text-decoration: none;
+            margin: 5px;
             border-radius: 5px;
-            font-size: 18px;
+            text-decoration: none;
             font-weight: bold;
         }
-        .tiktok { background-color: #000; color: #fff; }
-        .whatsapp { background-color: #25D366; color: #fff; }
-        .facebook { background-color: #1877F2; color: #fff; }
-        .instagram { background-color: #E4405F; color: #fff; }
-        .special-section {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-        }
-        .footer {
-            margin-top: 50px;
-            padding: 10px;
-            font-size: 14px;
-            color: gray;
-        }
+        .tiktok { background-color: black; color: white; }
+        .whatsapp { background-color: #25D366; color: white; }
+        .facebook { background-color: #1877F2; color: white; }
+        .instagram { background-color: #E4405F; color: white; }
+        .whatsapp-group { background-color: #128C7E; color: white; }
     </style>
 </head>
 <body>
-    <div class="header">
+    <div class="container">
         <img src="profile.jpg" alt="Profile Image" class="profile-img">
-        <h2>مرحبًا بك في الموقع الشخصي جرجس أشرف</h2>
-    </div><div class="special-section">
-    <h3>القسم الخاص</h3>
-    <a href="https://chat.whatsapp.com/HlWChtsbTAhKe5hBsKwiVl" class="whatsapp">واتساب</a>
-</div>
-
-<div class="links">
-    <a href="#" class="tiktok">TikTok</a>
-    <a href="#" class="whatsapp">WhatsApp</a>
-    <a href="#" class="facebook">Facebook</a>
-    <a href="#" class="instagram">Instagram</a>
-</div>
-
-<div class="footer">
-    © الحقوق محفوظة لـ جرجس أشرف 2025
+        <h1>مرحبًا بك في الموقع الشخصي جرجس أشرف</h1><h2>القسم الخاص</h2>
+    <a href="https://chat.whatsapp.com/HlWChtsbTAhKe5hBsKwiVl" class="whatsapp-group">جروب الواتساب</a>
+    
+    <h2>مواقع التواصل لصاحب الموقع</h2>
+    <div class="social-links">
+        <a href="#" class="tiktok">TikTok</a>
+        <a href="#" class="whatsapp">WhatsApp</a>
+        <a href="#" class="facebook">Facebook</a>
+        <a href="#" class="instagram">Instagram</a>
+    </div>
 </div>
 
 </body>
