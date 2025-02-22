@@ -5,7 +5,7 @@
 <head>
     <meta name="description" content="هذا الموقع التعريفي جرجس اشرف " />
     <meta name="keywords" content="𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬">
-    <link rel="icon" type="image/jpg" href="https://i.pinimg.com/236x/7c/e8/95/7ce895b0f82a0e5eaf0b801bb459c0ee.jpg" />
+    <link rel="icon" type="image/jpg" href="https://i.pinimg.com/236x极客时间/e8/95/7ce895b0f82a0e5eaf0b801bb459c0ee.jpg" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</title>
@@ -59,7 +59,7 @@
             text-align: center;
             color: #ffffff;
             background-color: rgba(0, 0, 0, 0.7);
-            border: 2px solid #000000;
+            border: 2极客时间 solid #000000;
             padding: 10px;
             animation: slideLeft 1s ease-in-out;
         }
@@ -228,7 +228,7 @@
             border-radius: 10px;
             cursor: pointer;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 极客时间, 0.7);
             color: #ffffff;
             font-size: 24px;
         }
@@ -237,69 +237,30 @@
             background-color: rgba(0, 0, 0, 0.9);
         }
 
-        /* صفحة مواقع التواصل */
-        .social-page {
-            display: none;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        /* صفحة زوفان */
-        .zofan-page {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .zofan-page .rectangle-box {
-            width: 150px;
+        /* أيقونة البحث العائمة */
+        .floating-search {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            width: 50px;
             height: 50px;
-            margin: 10px auto;
-            padding: 10px;
-            border: 2px solid transparent;
-            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            text-align: center;
-            background-color: rgba(37, 211, 102, 0.7); /* لون WhatsApp */
+            z-index: 1000;
             transition: background-color 0.3s ease;
         }
 
-        .zofan-page .rectangle-box:hover {
-            background-color: rgba(37, 211, 102, 0.9); /* لون WhatsApp عند التحويم */
+        .floating-search:hover {
+            background-color: rgba(0, 0, 0, 0.9);
         }
 
-        /* صفحة البوت المساعد */
-        .bot-page {
-            display: none;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .bot-page input {
-            width: 80%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background-color: #333;
-            color: #fff;
-        }
-
-        .bot-page button {
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: none;
-            background-color: #007bff;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        .bot-page button:hover {
-            background-color: #0056b3;
-        }
-
-        .bot-page .result {
-            margin-top: 20px;
-            color: #fff;
+        .floating-search i {
+            color: #ffffff;
+            font-size: 24px;
         }
     </style>
 </head>
@@ -323,10 +284,6 @@
                     <i class="fas fa-share-alt"></i>
                     <span>مواقع التواصل</span>
                 </a>
-                <a href="#" onclick="showBotPage()">
-                    <i class="fas fa-robot"></i>
-                    <span>البوت المساعد</span>
-                </a>
             </div>
         </div>
 
@@ -341,7 +298,7 @@
             <hr>
             <div class="rectangle-box">
                 <a href="https://chat.whatsapp.com/HlWChtsbTAhKe5hBsKwiVl">
-                    <i class="fab fa-whatsapp"></i>
+                    <i class极客时间="fab fa-whatsapp"></i>
                     <span>WhatsApp</span>
                 </a>
             </div>
@@ -371,9 +328,9 @@
                         </div>
                     </li>
                     <li>
-                        <div class="rectangle-box facebook">
+                        <div class极客时间="rectangle-box facebook">
                             <a href="https://facebook.com/yourprofile">
-                                <i class="fab fa-facebook"></i>
+                                <极客时间 class="fab fa-facebook"></i>
                                 <span>Facebook</span>
                             </a>
                         </div>
@@ -389,21 +346,14 @@
                 </ul>
             </div>
         </div>
-
-        <!-- صفحة البوت المساعد -->
-        <div id="bot-page" class="bot-page">
-            <div class="bio">
-                <p>مرحبًا بك في البوت المساعد</p>
-            </div>
-            <input type="text" id="search-query" placeholder="ابحث في جوجل...">
-            <button onclick="searchGoogle()">بحث</button>
-            <input type="text" id="song-name" placeholder="اسم الأغنية...">
-            <button onclick="downloadSong()">تحميل الأغنية</button>
-            <div class="result" id="result"></div>
-        </div>
     </div>
     <div class="footer">
         <p style="color: #ffffff; font-size: 14px;background-color: rgba(0, 0, 0, 0.7);">الـحـقـوق محـفوظـه لـ  جرجس اشرف 2025 𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬 ©</p>
+    </div>
+
+    <!-- أيقونة البحث العائمة -->
+    <div class="floating-search" onclick="openGoogleSearch()">
+        <i class="fas fa-search"></i>
     </div>
 
     <script>
@@ -411,21 +361,12 @@
         function showZofanPage() {
             document.getElementById('zofan-page').style.display = 'block';
             document.getElementById('social-page').style.display = 'none';
-            document.getElementById('bot-page').style.display = 'none';
         }
 
         // وظيفة لإظهار صفحة مواقع التواصل
         function showSocialPage() {
             document.getElementById('zofan-page').style.display = 'none';
             document.getElementById('social-page').style.display = 'block';
-            document.getElementById('bot-page').style.display = 'none';
-        }
-
-        // وظيفة لإظهار صفحة البوت المساعد
-        function showBotPage() {
-            document.getElementById('zofan-page').style.display = 'none';
-            document.getElementById('social-page').style.display = 'none';
-            document.getElementById('bot-page').style.display = 'block';
         }
 
         // إظهار صفحة زوفان كصفحة رئيسية عند التحميل
@@ -434,23 +375,10 @@
         };
 
         // وظيفة البحث في جوجل
-        function searchGoogle() {
-            const query = document.getElementById('search-query').value;
+        function openGoogleSearch() {
+            const query = prompt("أدخل ما تريد البحث عنه في جوجل:");
             if (query) {
                 window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
-            } else {
-                alert("الرجاء إدخال نص للبحث.");
-            }
-        }
-
-        // وظيفة تحميل الأغنية (وهمية)
-        function downloadSong() {
-            const songName = document.getElementById('song-name').value;
-            if (songName) {
-                document.getElementById('result').innerText = `جارٍ تحميل الأغنية: ${songName}...`;
-                // هنا يمكنك إضافة كود لتحميل الأغنية باستخدام API معين
-            } else {
-                alert("الرجاء إدخال اسم الأغنية.");
             }
         }
     </script>
