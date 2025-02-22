@@ -237,9 +237,15 @@
             background-color: rgba(0, 0, 0, 0.9);
         }
 
+        /* صفحة مواقع التواصل */
+        .social-page {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
         /* صفحة زوفان */
         .zofan-page {
-            display: none;
             text-align: center;
             margin-top: 20px;
         }
@@ -274,19 +280,19 @@
                 <i class="fas fa-home"></i> <!-- أيقونة البيت -->
             </div>
             <div class="dropdown-content">
-                <a href="#" onclick="showMainPage()">
-                    <i class="fas fa-home"></i>
-                    <span>الرئيسي</span>
-                </a>
                 <a href="#" onclick="showZofanPage()">
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-home"></i>
                     <span>زوفان</span>
+                </a>
+                <a href="#" onclick="showSocialPage()">
+                    <i class="fas fa-share-alt"></i>
+                    <span>مواقع التواصل</span>
                 </a>
             </div>
         </div>
 
-        <!-- الصفحة الرئيسية -->
-        <div id="main-page">
+        <!-- صفحة زوفان (الصفحة الرئيسية) -->
+        <div id="zofan-page" class="zofan-page">
             <div class="profile">
                 <img style=" border-radius: 25px;height: 200px;width: 200px;" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة النبذة">
             </div>
@@ -294,53 +300,51 @@
                 <p>مـرحـبـا بـك فـي المـوقـع الشخصي جرجس اشرف </p>
             </div>
             <hr>
-            <div class="contact-info">
-                <div class="platform">
-                    <ul>
-                        <li>
-                            <div class="rectangle-box tiktok">
-                                <a href="https://tiktok.com/@1devil2slayer">
-                                    <i class="fab fa-tiktok"></i>
-                                    <span>TikTok</span>
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rectangle-box whatsapp">
-                                <a href="https://wa.me/201208898875">
-                                    <i class="fab fa-whatsapp"></i>
-                                    <span>WhatsApp</span>
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rectangle-box facebook">
-                                <a href="https://facebook.com/yourprofile">
-                                    <i class="fab fa-facebook"></i>
-                                    <span>Facebook</span>
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rectangle-box instagram">
-                                <a href="https://instagram.com/yourprofile">
-                                    <i class="fab fa-instagram"></i>
-                                    <span>Instagram</span>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- صفحة زوفان -->
-        <div id="zofan-page" class="zofan-page">
             <div class="rectangle-box">
                 <a href="https://chat.whatsapp.com/HlWChtsbTAhKe5hBsKwiVl">
                     <i class="fab fa-whatsapp"></i>
                     <span>WhatsApp</span>
                 </a>
+            </div>
+        </div>
+
+        <!-- صفحة مواقع التواصل (الاختيارية) -->
+        <div id="social-page" class="social-page">
+            <div class="platform">
+                <ul>
+                    <li>
+                        <div class="rectangle-box tiktok">
+                            <a href="https://tiktok.com/@1devil2slayer">
+                                <i class="fab fa-tiktok"></i>
+                                <span>TikTok</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="rectangle-box whatsapp">
+                            <a href="https://wa.me/201208898875">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="rectangle-box facebook">
+                            <a href="https://facebook.com/yourprofile">
+                                <i class="fab fa-facebook"></i>
+                                <span>Facebook</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="rectangle-box instagram">
+                            <a href="https://instagram.com/yourprofile">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -349,17 +353,22 @@
     </div>
 
     <script>
-        // وظيفة لإظهار الصفحة الرئيسية
-        function showMainPage() {
-            document.getElementById('main-page').style.display = 'block';
-            document.getElementById('zofan-page').style.display = 'none';
+        // وظيفة لإظهار صفحة زوفان (الصفحة الرئيسية)
+        function showZofanPage() {
+            document.getElementById('zofan-page').style.display = 'block';
+            document.getElementById('social-page').style.display = 'none';
         }
 
-        // وظيفة لإظهار صفحة زوفان
-        function showZofanPage() {
-            document.getElementById('main-page').style.display = 'none';
-            document.getElementById('zofan-page').style.display = 'block';
+        // وظيفة لإظهار صفحة مواقع التواصل
+        function showSocialPage() {
+            document.getElementById('zofan-page').style.display = 'none';
+            document.getElementById('social-page').style.display = 'block';
         }
+
+        // إظهار صفحة زوفان كصفحة رئيسية عند التحميل
+        window.onload = function () {
+            showZofanPage();
+        };
     </script>
 </body>
 
