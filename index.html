@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="ar">
 
@@ -11,6 +10,7 @@
     <title>𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</title>
     <meta thhp-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         body {
             margin: 0;
@@ -318,6 +318,222 @@
         .reset-button:hover {
             background-color: rgba(255, 0, 0, 0.9); /* لون أحمر عند التحويم */
         }
+
+        /* صفحة التواصل مع المبرمج */
+        .contact-page {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-page .bio {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .contact-page .bio p {
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .contact-page .rectangle-box {
+            width: 150px;
+            height: 50px;
+            margin: 10px auto;
+            padding: 10px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            background-color: rgba(24, 119, 242, 0.7); /* لون Facebook */
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-page .rectangle-box:hover {
+            background-color: rgba(24, 119, 242, 0.9); /* لون Facebook عند التحويم */
+        }
+
+        /* ميزة التصويت */
+        .vote-page {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .vote-page .bio {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .vote-page .bio p {
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .vote-page .rectangle-box {
+            width: 150px;
+            height: 50px;
+            margin: 10px auto;
+            padding: 10px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            background-color: rgba(24, 119, 242, 0.7); /* لون Facebook */
+            transition: background-color 0.3s ease;
+        }
+
+        .vote-page .rectangle-box:hover {
+            background-color: rgba(24, 119, 242, 0.9); /* لون Facebook عند التحويم */
+        }
+
+        /* ميزة التقييمات التفاعلية */
+        .rating-page {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .rating-page .bio {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .rating-page .bio p {
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .rating-page .rectangle-box {
+            width: 150px;
+            height: 50px;
+            margin: 10px auto;
+            padding: 10px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            background-color: rgba(24, 119, 242, 0.7); /* لون Facebook */
+            transition: background-color 0.3s ease;
+        }
+
+        .rating-page .rectangle-box:hover {
+            background-color: rgba(24, 119, 242, 0.9); /* لون Facebook عند التحويم */
+        }
+
+        /* ميزة الإشعارات */
+        .notification-page {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .notification-page .bio {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .notification-page .bio p {
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .notification-page .rectangle-box {
+            width: 150px;
+            height: 50px;
+            margin: 10px auto;
+            padding: 10px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            background-color: rgba(24, 119, 242, 0.7); /* لون Facebook */
+            transition: background-color 0.3s ease;
+        }
+
+        .notification-page .rectangle-box:hover {
+            background-color: rgba(24, 119, 242, 0.9); /* لون Facebook عند التحويم */
+        }
+
+        /* ميزة التخصيص */
+        .customization-page {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .customization-page .bio {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .customization-page .bio p {
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .customization-page .rectangle-box {
+            width: 150px;
+            height: 50px;
+            margin: 10px auto;
+            padding: 10px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            background-color: rgba(24, 119, 242, 0.7); /* لون Facebook */
+            transition: background-color 0.3s ease;
+        }
+
+        .customization-page .rectangle-box:hover {
+            background-color: rgba(24, 119, 242, 0.9); /* لون Facebook عند التحويم */
+        }
+
+        /* ميزة الدردشة المباشرة */
+        .chat-page {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .chat-page .bio {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .chat-page .bio p {
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .chat-page .rectangle-box {
+            width: 150px;
+            height: 50px;
+            margin: 10px auto;
+            padding: 10px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            background-color: rgba(24, 119, 242, 0.7); /* لون Facebook */
+            transition: background-color 0.3s ease;
+        }
+
+        .chat-page .rectangle-box:hover {
+            background-color: rgba(24, 119, 242, 0.9); /* لون Facebook عند التحويم */
+        }
     </style>
 </head>
 
@@ -340,9 +556,33 @@
                     <i class="fas fa-share-alt"></i>
                     <span>مواقع التواصل</span>
                 </a>
+                <a href="#" onclick="showContactPage()">
+                    <i class="fas fa-envelope"></i>
+                    <span>التواصل مع المبرمج</span>
+                </a>
                 <a href="#" onclick="showSettingsPage()">
                     <i class="fas fa-cog"></i>
                     <span>الإعدادات</span>
+                </a>
+                <a href="#" onclick="showVotePage()">
+                    <i class="fas fa-vote-yea"></i>
+                    <span>التصويت</span>
+                </a>
+                <a href="#" onclick="showRatingPage()">
+                    <i class="fas fa-star"></i>
+                    <span>التقييمات التفاعلية</span>
+                </a>
+                <a href="#" onclick="showNotificationPage()">
+                    <i class="fas fa-bell"></i>
+                    <span>الإشعارات</span>
+                </a>
+                <a href="#" onclick="showCustomizationPage()">
+                    <i class="fas fa-palette"></i>
+                    <span>التخصيص</span>
+                </a>
+                <a href="#" onclick="showChatPage()">
+                    <i class="fas fa-comments"></i>
+                    <span>الدردشة المباشرة</span>
                 </a>
             </div>
         </div>
@@ -410,6 +650,28 @@
             </div>
         </div>
 
+        <!-- صفحة التواصل مع المبرمج -->
+        <div id="contact-page" class="contact-page">
+            <div class="profile">
+                <img id="contact-profile-img" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة التواصل">
+            </div>
+            <div class="bio">
+                <p>مرحبًا بك في صفحة التواصل مع المبرمج</p>
+            </div>
+            <div class="rectangle-box whatsapp">
+                <a href="https://wa.me/201208898875">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+            <div class="rectangle-box email">
+                <a href="mailto:your-email@example.com">
+                    <i class="fas fa-envelope"></i>
+                    <span>البريد الإلكتروني</span>
+                </a>
+            </div>
+        </div>
+
         <!-- صفحة الإعدادات -->
         <div id="settings-page" class="settings-page">
             <div class="profile">
@@ -436,6 +698,99 @@
                 إعادة ضبط الإعدادات
             </div>
         </div>
+
+        <!-- صفحة التصويت -->
+        <div id="vote-page" class="vote-page">
+            <div class="profile">
+                <img id="vote-profile-img" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة التصويت">
+            </div>
+            <div class="bio">
+                <p>مرحبًا بك في صفحة التصويت</p>
+            </div>
+            <div class="rectangle-box" onclick="vote('good')">
+                <i class="fas fa-thumbs-up"></i>
+                <span>حلو</span>
+            </div>
+            <div class="rectangle-box" onclick="vote('bad')">
+                <i class="fas fa-thumbs-down"></i>
+                <span>وحش</span>
+            </div>
+        </div>
+
+        <!-- صفحة التقييمات التفاعلية -->
+        <div id="rating-page" class="rating-page">
+            <div class="profile">
+                <img id="rating-profile-img" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة التقييمات">
+            </div>
+            <div class="bio">
+                <p>مرحبًا بك في صفحة التقييمات التفاعلية</p>
+            </div>
+            <div class="rectangle-box" onclick="rate(1)">
+                <i class="fas fa-star"></i>
+                <span>1</span>
+            </div>
+            <div class="rectangle-box" onclick="rate(2)">
+                <i class="fas fa-star"></i>
+                <span>2</span>
+            </div>
+            <div class="rectangle-box" onclick="rate(3)">
+                <i class="fas fa-star"></i>
+                <span>3</span>
+            </div>
+            <div class="rectangle-box" onclick="rate(4)">
+                <i class="fas fa-star"></i>
+                <span>4</span>
+            </div>
+            <div class="rectangle-box" onclick="rate(5)">
+                <i class="fas fa-star"></i>
+                <span>5</span>
+            </div>
+        </div>
+
+        <!-- صفحة الإشعارات -->
+        <div id="notification-page" class="notification-page">
+            <div class="profile">
+                <img id="notification-profile-img" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة الإشعارات">
+            </div>
+            <div class="bio">
+                <p>مرحبًا بك في صفحة الإشعارات</p>
+            </div>
+            <div class="rectangle-box" onclick="showNotification('تم إرسال رسالتك بنجاح!')">
+                <i class="fas fa-bell"></i>
+                <span>إظهار إشعار</span>
+            </div>
+        </div>
+
+        <!-- صفحة التخصيص -->
+        <div id="customization-page" class="customization-page">
+            <div class="profile">
+                <img id="customization-profile-img" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة التخصيص">
+            </div>
+            <div class="bio">
+                <p>مرحبًا بك في صفحة التخصيص</p>
+            </div>
+            <div class="rectangle-box">
+                <label for="font-size">
+                    <i class="fas fa-text-height"></i>
+                    <span>تغيير حجم الخط</span>
+                </label>
+                <input type="range" id="font-size" min="10" max="30" onchange="changeFontSize(this.value)">
+            </div>
+        </div>
+
+        <!-- صفحة الدردشة المباشرة -->
+        <div id="chat-page" class="chat-page">
+            <div class="profile">
+                <img id="chat-profile-img" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة الدردشة">
+            </div>
+            <div class="bio">
+                <p>مرحبًا بك في صفحة الدردشة المباشرة</p>
+            </div>
+            <div class="rectangle-box" onclick="openChat()">
+                <i class="fas fa-comments"></i>
+                <span>فتح الدردشة</span>
+            </div>
+        </div>
     </div>
     <div class="footer">
         <p style="color: #ffffff; font-size: 14px;background-color: rgba(0, 0, 0, 0.7);">الـحـقـوق محـفوظـه لـ  جرجس اشرف 2025 𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬 ©</p>
@@ -446,21 +801,117 @@
         function showZofanPage() {
             document.getElementById('zofan-page').style.display = 'block';
             document.getElementById('social-page').style.display = 'none';
+            document.getElementById('contact-page').style.display = 'none';
             document.getElementById('settings-page').style.display = 'none';
+            document.getElementById('vote-page').style.display = 'none';
+            document.getElementById('rating-page').style.display = 'none';
+            document.getElementById('notification-page').style.display = 'none';
+            document.getElementById('customization-page').style.display = 'none';
+            document.getElementById('chat-page').style.display = 'none';
         }
 
         // وظيفة لإظهار صفحة مواقع التواصل
         function showSocialPage() {
             document.getElementById('zofan-page').style.display = 'none';
             document.getElementById('social-page').style.display = 'block';
+            document.getElementById('contact-page').style.display = 'none';
             document.getElementById('settings-page').style.display = 'none';
+            document.getElementById('vote-page').style.display = 'none';
+            document.getElementById('rating-page').style.display = 'none';
+            document.getElementById('notification-page').style.display = 'none';
+            document.getElementById('customization-page').style.display = 'none';
+            document.getElementById('chat-page').style.display = 'none';
+        }
+
+        // وظيفة لإظهار صفحة التواصل مع المبرمج
+        function showContactPage() {
+            document.getElementById('zofan-page').style.display = 'none';
+            document.getElementById('social-page').style.display = 'none';
+            document.getElementById('contact-page').style.display = 'block';
+            document.getElementById('settings-page').style.display = 'none';
+            document.getElementById('vote-page').style.display = 'none';
+            document.getElementById('rating-page').style.display = 'none';
+            document.getElementById('notification-page').style.display = 'none';
+            document.getElementById('customization-page').style.display = 'none';
+            document.getElementById('chat-page').style.display = 'none';
         }
 
         // وظيفة لإظهار صفحة الإعدادات
         function showSettingsPage() {
             document.getElementById('zofan-page').style.display = 'none';
             document.getElementById('social-page').style.display = 'none';
+            document.getElementById('contact-page').style.display = 'none';
             document.getElementById('settings-page').style.display = 'block';
+            document.getElementById('vote-page').style.display = 'none';
+            document.getElementById('rating-page').style.display = 'none';
+            document.getElementById('notification-page').style.display = 'none';
+            document.getElementById('customization-page').style.display = 'none';
+            document.getElementById('chat-page').style.display = 'none';
+        }
+
+        // وظيفة لإظهار صفحة التصويت
+        function showVotePage() {
+            document.getElementById('zofan-page').style.display = 'none';
+            document.getElementById('social-page').style.display = 'none';
+            document.getElementById('contact-page').style.display = 'none';
+            document.getElementById('settings-page').style.display = 'none';
+            document.getElementById('vote-page').style.display = 'block';
+            document.getElementById('rating-page').style.display = 'none';
+            document.getElementById('notification-page').style.display = 'none';
+            document.getElementById('customization-page').style.display = 'none';
+            document.getElementById('chat-page').style.display = 'none';
+        }
+
+        // وظيفة لإظهار صفحة التقييمات التفاعلية
+        function showRatingPage() {
+            document.getElementById('zofan-page').style.display = 'none';
+            document.getElementById('social-page').style.display = 'none';
+            document.getElementById('contact-page').style.display = 'none';
+            document.getElementById('settings-page').style.display = 'none';
+            document.getElementById('vote-page').style.display = 'none';
+            document.getElementById('rating-page').style.display = 'block';
+            document.getElementById('notification-page').style.display = 'none';
+            document.getElementById('customization-page').style.display = 'none';
+            document.getElementById('chat-page').style.display = 'none';
+        }
+
+        // وظيفة لإظهار صفحة الإشعارات
+        function showNotificationPage() {
+            document.getElementById('zofan-page').style.display = 'none';
+            document.getElementById('social-page').style.display = 'none';
+            document.getElementById('contact-page').style.display = 'none';
+            document.getElementById('settings-page').style.display = 'none';
+            document.getElementById('vote-page').style.display = 'none';
+            document.getElementById('rating-page').style.display = 'none';
+            document.getElementById('notification-page').style.display = 'block';
+            document.getElementById('customization-page').style.display = 'none';
+            document.getElementById('chat-page').style.display = 'none';
+        }
+
+        // وظيفة لإظهار صفحة التخصيص
+        function showCustomizationPage() {
+            document.getElementById('zofan-page').style.display = 'none';
+            document.getElementById('social-page').style.display = 'none';
+            document.getElementById('contact-page').style.display = 'none';
+            document.getElementById('settings-page').style.display = 'none';
+            document.getElementById('vote-page').style.display = 'none';
+            document.getElementById('rating-page').style.display = 'none';
+            document.getElementById('notification-page').style.display = 'none';
+            document.getElementById('customization-page').style.display = 'block';
+            document.getElementById('chat-page').style.display = 'none';
+        }
+
+        // وظيفة لإظهار صفحة الدردشة المباشرة
+        function showChatPage() {
+            document.getElementById('zofan-page').style.display = 'none';
+            document.getElementById('social-page').style.display = 'none';
+            document.getElementById('contact-page').style.display = 'none';
+            document.getElementById('settings-page').style.display = 'none';
+            document.getElementById('vote-page').style.display = 'none';
+            document.getElementById('rating-page').style.display = 'none';
+            document.getElementById('notification-page').style.display = 'none';
+            document.getElementById('customization-page').style.display = 'none';
+            document.getElementById('chat-page').style.display = 'block';
         }
 
         // وظيفة لتغيير لون الأيقونة
@@ -504,6 +955,29 @@
             instagramBoxes.forEach(box => {
                 box.style.background = 'linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)';
             });
+        }
+
+        // وظيفة التصويت
+        function vote(voteType) {
+            if (voteType === 'good') {
+                alert('شكرًا لك! الموقع حلو.');
+            } else if (voteType === 'bad') {
+                alert('نأسف لذلك! سنحسن الموقع.');
+            }
+        }
+        // وظيفة الإشعارات
+        function showNotification(message) {
+            alert(message);
+        }
+
+        // وظيفة تغيير حجم الخط
+        function changeFontSize(size) {
+            document.body.style.fontSize = size + 'px';
+        }
+
+        // وظيفة فتح الدردشة
+        function openChat() {
+            alert('تم فتح الدردشة المباشرة.');
         }
 
         // إظهار صفحة زوفان كصفحة رئيسية عند التحميل
