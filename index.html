@@ -1,76 +1,121 @@
 
-<!DOCTYPE html><html lang="ar">
+<!doctype html>
+
+<html lang="ar">
 <head>
+    <meta name="description" content="هذا الموقع التعريفي جرجس اشرف" />
+    <meta name="keywords" content="𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬">
+    <link rel="icon" type="image/jpg" href="https://i.pinimg.com/236x/7c/e8/95/7ce895b0f82a0e5eaf0b801bb459c0ee.jpg" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="جرجس أشرف">
-    <meta property="og:image" content="profile-image.jpg">
-    <title>جرجس أشرف</title>
+    <title>𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            background-image: url('background.jpg');
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            color: white;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
             font-family: Arial, sans-serif;
+            text-align: center;
         }
-        .profile-container {
-            margin-top: 50px;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
         }
-        .profile-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 3px solid white;
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            filter: blur(5px);
+            opacity: 0.8;
         }
-        .links {
-            margin-top: 20px;
+        .background-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        .link-button {
-            display: block;
+        .profile img {
+            border-radius: 25px;
+            height: 200px;
             width: 200px;
-            margin: 10px auto;
-            padding: 10px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 18px;
-            color: white;
-            font-weight: bold;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
-        .tiktok { background-color: black; }
-        .whatsapp { background-color: green; }
-        .facebook { background-color: blue; }
-        .instagram { background-color: red; }
-        .whatsapp-group {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .bio {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 15px;
+            display: inline-block;
             margin-top: 20px;
         }
-        .whatsapp-group img {
-            width: 50px;
+        .platform ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .platform ul li {
+            margin: 10px 0;
+        }
+        .rectangle-box {
+            width: 150px;
             height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            gap: 10px;
+            transition: 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .rectangle-box:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+        .tiktok { background-color: #000000; }
+        .whatsapp { background-color: #25D366; }
+        .facebook { background-color: #1877F2; }
+        .instagram { background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7); }
+        .footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
-    <div class="profile-container">
-        <img src="profile-image.jpg" alt="Profile Image" class="profile-image">
-        <h1>مرحبًا بك في الموقع الشخصي لجرجس أشرف</h1>
-        <h2>القسم الخاص</h2>
+    <div class="background-image">
+        <img src="https://i.pinimg.com/736x/b7/70/34/b7703463a084b35612411ac3921878a7.jpg" alt="صورة الخلفية">
     </div>
-    <div class="links">
-        <h3>مواقع التواصل الخاصة بصاحب الموقع</h3>
-        <a href="#" class="link-button tiktok">TikTok</a>
-        <a href="#" class="link-button whatsapp">WhatsApp</a>
-        <a href="#" class="link-button facebook">Facebook</a>
-        <a href="#" class="link-button instagram">Instagram</a>
+    <div class="container">
+        <div class="profile">
+            <img src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة النبذة">
+        </div>
+        <div class="bio">
+            <p>مـرحـبـا بـك فـي المـوقـع الشخصي جرجس اشرف </p>
+        </div>
+        <hr>
+        <div class="platform">
+            <ul>
+                <li><a class="rectangle-box tiktok" href="https://tiktok.com/@1devil2slayer"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                <li><a class="rectangle-box whatsapp" href="https://wa.me/201208898875"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                <li><a class="rectangle-box facebook" href="https://www.facebook.com/share/1WpTH3WAhf/"><i class="fab fa-facebook"></i> Facebook</a></li>
+                <li><a class="rectangle-box instagram" href="https://www.instagram.com/luffy28178?igsh=MWk3Y25iejExdmdndg=="><i class="fab fa-instagram"></i> Instagram</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="whatsapp-group">
-        <a href="#">
-            <img src="whatsapp-group-icon.png" alt="مجموعة WhatsApp">
-        </a>
+    <div class="footer">
+        <p style="color: #ffffff; font-size: 14px;">الـحـقـوق محـفوظـه لـ جرجس اشرف 2025 𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬 ©</p>
     </div>
 </body>
 </html>
