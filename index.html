@@ -40,24 +40,33 @@
         object-fit: cover;
     }
 
+    .profile {
+        margin-bottom: 20px;
+        animation: slideRight 1s ease-in-out;
+    }
+
     .profile img {
         width: 100%;
         display: block;
         margin: 0 auto 20px;
-        border-radius: 25px;
-        height: 200px;
-        width: 200px;
     }
 
     .bio {
         text-align: center;
+        color: #ffffff;
         background-color: rgba(0, 0, 0, 0.7);
         border: 2px solid #000000;
         padding: 10px;
+        animation: slideLeft 1s ease-in-out;
     }
 
     .contact-info {
         text-align: center;
+    }
+
+    .platform {
+        margin-top: 20px;
+        animation: slideLeft 1s ease-in-out;
     }
 
     .platform ul {
@@ -66,40 +75,81 @@
     }
 
     .platform ul li {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
 
-    .rectangle-box {
+    .platform ul li .rectangle-box {
         width: 150px;
         height: 50px;
         margin: 10px auto;
         padding: 10px;
+        border: 2px solid transparent;
         border-radius: 10px;
+        cursor: pointer;
         text-align: center;
         background-color: rgba(0, 0, 0, 0.7);
+        animation: slideLeft 1s ease-in-out;
     }
 
-    .rectangle-box:hover {
+    .platform ul li .rectangle-box:hover {
         background-color: rgba(0, 0, 0, 0.9);
     }
 
-    .rectangle-box a {
+    .platform ul li a {
         color: #ffffff;
         text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
     }
 
-    .rectangle-box i {
+    .platform ul li a i {
         font-size: 24px;
     }
 
+    .platform ul li a span {
+        font-size: 14px;
+    }
+
     .footer {
-        text-align: center;
+        width: 100%;
         padding: 10px 0;
-        background-color: rgba(0, 0, 0, 0.7);
+        text-align: center;
+    }
+
+    .footer img {
+        max-width: 100%;
+    }
+
+    @keyframes slideRight {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .my-link {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .my-link:hover {
+        text-decoration: underline;
+        color: rgb(0, 140, 255);
+    }
+
+    @keyframes slideLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
 </style>
 
@@ -109,35 +159,32 @@
     </div>
     <div class="container">
         <div class="profile">
-            <img src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة النبذة">
+            <img style=" border-radius: 25px;height: 200px;width: 200px;" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة النبذة">
         </div>
         <div class="bio">
-            <p>مـرحـبـا بـك فـي المـوقـع الشخصي جرجس اشرف</p>
+            <p>مـرحـبـا بـك فـي المـوقـع الشخصي جرجس اشرف </p>
         </div>
         <hr>
         <div class="contact-info">
             <div class="platform">
                 <ul>
                     <li>
-                        <div class="rectangle-box"> <a href="https://tiktok.com/@1devil2slayer"><i class="fab fa-tiktok"></i>
-                                <span>TikTok</span></a>
-                        </div>
+                        <div class="rectangle-box my-link"> <a class="my-link" href="https://tiktok.com/@1devil2slayer"><i class="fab fa-tiktok"></i> <span>TikTok</span></a></div>
                     </li>
                     <li>
-                        <div class="rectangle-box"> <a href="https://wa.me/201208898875"><i class="fab fa-whatsapp"></i>
-                                <span>WhatsApp</span></a>
-                        </div>
+                        <div class="rectangle-box my-link"> <a class="my-link" href="https://wa.me/201208898875"><i class="fab fa-whatsapp"></i> <span>WhatsApp</span></a></div>
                     </li>
                     <li>
-                        <div class="rectangle-box"> <a href="https://www.facebook.com/YOUR_FACEBOOK_PROFILE"><i class="fab fa-facebook"></i>
-                                <span>Facebook</span></a>
-                        </div>
+                        <div class="rectangle-box my-link"> <a class="my-link" href="https://www.facebook.com/profile.php?id=61559121043023"><i class="fab fa-facebook"></i> <span>Facebook</span></a></div>
+                    </li>
+                    <li>
+                        <div class="rectangle-box my-link"> <a class="my-link" href="https://www.instagram.com/luffy28178?igsh=MWk3Y25iejExdmdndg=="><i class="fab fa-instagram"></i> <span>Instagram</span></a></div>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="footer"> 
-        <p>الـحـقـوق محـفوظـه لـ جرجس اشرف 2025 𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬 ©</p>
+        <p style="color: #ffffff; font-size: 14px;background-color: rgba(0, 0, 0, 0.7);">الـحـقـوق محـفوظـه لـ جرجس اشرف 2025 𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬 ©</p>
     </div>
 </body></html>
