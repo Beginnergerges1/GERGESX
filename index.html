@@ -86,15 +86,19 @@
             background-color: rgba(0, 0, 0, 0.9);
         }
         .platform ul li a {
-            color: #ffffff;
             text-decoration: none;
+            font-size: 14px;
         }
         .platform ul li a i {
             font-size: 24px;
-            color: blue; /* جعل الأيقونات زرقاء */
         }
-        .platform ul li a span {
-            font-size: 14px;
+        .platform ul li a .tiktok { color: #000000; }
+        .platform ul li a .whatsapp { color: #25D366; }
+        .platform ul li a .facebook { color: #1877F2; }
+        .platform ul li a .instagram {
+            background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .footer {
             width: 100%;
@@ -113,14 +117,6 @@
                 opacity: 1;
                 transform: translateX(0);
             }
-        }
-        .my-link {
-            text-decoration: none;
-            color: #000;
-        }
-        .my-link:hover {
-            text-decoration: underline;
-            color: rgb(0, 140, 255);
         }
         @keyframes slideLeft {
             from {
@@ -149,23 +145,15 @@
         <div class="contact-info">
             <div class="platform">
                 <ul>
-                    <li>
-                        <div class="rectangle-box my-link"> <a class="my-link" href="https://tiktok.com/@1devil2slayer"><i class="fab fa-tiktok"></i> <span>TikTok</span></a></div>
-                    </li>
-                    <li>
-                        <div class="rectangle-box my-link"> <a class="my-link" href="https://wa.me/201208898875"><i class="fab fa-whatsapp"></i> <span>WhatsApp</span></a></div>
-                    </li>
-                    <li>
-                        <div class="rectangle-box my-link"> <a class="my-link" href="https://www.facebook.com/profile.php?id=61559121043023"><i class="fab fa-facebook"></i> <span>Facebook</span></a></div>
-                    </li>
-                    <li>
-                        <div class="rectangle-box my-link"> <a class="my-link" href="https://www.instagram.com/luffy28178?igsh=MWk3Y25iejExdmdndg=="><i class="fab fa-instagram"></i> <span>Instagram</span></a></div>
-                    </li>
+                    <li><div class="rectangle-box"><a href="https://tiktok.com/@1devil2slayer"><i class="fab fa-tiktok tiktok"></i> TikTok</a></div></li>
+                    <li><div class="rectangle-box"><a href="https://wa.me/201208898875"><i class="fab fa-whatsapp whatsapp"></i> WhatsApp</a></div></li>
+                    <li><div class="rectangle-box"><a href="https://www.facebook.com/profile.php?id=61559121043023"><i class="fab fa-facebook facebook"></i> Facebook</a></div></li>
+                    <li><div class="rectangle-box"><a href="https://www.instagram.com/luffy28178?igsh=MWk3Y25iejExdmdndg=="><i class="fab fa-instagram instagram"></i> Instagram</a></div></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="footer"> 
+    <div class="footer">
         <p style="color: #ffffff; font-size: 14px;background-color: rgba(0, 0, 0, 0.7);">الـحـقـوق محـفوظـه لـ جرجس اشرف 2025 𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬 ©</p>
     </div>
 </body>
