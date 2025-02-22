@@ -26,6 +26,7 @@
             margin: 0 auto;
             padding: 20px;
             box-sizing: border-box;
+            position: relative;
         }
 
         .background-image {
@@ -187,7 +188,9 @@
 
         /* إضافة قائمة منسدلة */
         .dropdown {
-            position: relative;
+            position: absolute;
+            top: 20px;
+            left: 20px;
             display: inline-block;
         }
 
@@ -218,6 +221,30 @@
         }
 
         .dropdown-btn {
+            width: 50px;
+            height: 50px;
+            padding: 10px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            font-size: 24px;
+        }
+
+        .dropdown-btn:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* صفحة زوفان */
+        .zofan-page {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .zofan-page .rectangle-box {
             width: 150px;
             height: 50px;
             margin: 10px auto;
@@ -226,13 +253,12 @@
             border-radius: 10px;
             cursor: pointer;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #ffffff;
-            font-size: 14px;
+            background-color: rgba(37, 211, 102, 0.7); /* لون WhatsApp */
+            transition: background-color 0.3s ease;
         }
 
-        .dropdown-btn:hover {
-            background-color: rgba(0, 0, 0, 0.9);
+        .zofan-page .rectangle-box:hover {
+            background-color: rgba(37, 211, 102, 0.9); /* لون WhatsApp عند التحويم */
         }
     </style>
 </head>
@@ -242,72 +268,99 @@
         <img src="https://i.pinimg.com/736x/b7/70/34/b7703463a084b35612411ac3921878a7.jpg" alt="صورة الخلفية">
     </div>
     <div class="container">
-        <div class="profile">
-            <img style=" border-radius: 25px;height: 200px;width: 200px;" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة النبذة">
+        <!-- أيقونة البيت (القائمة المنسدلة) -->
+        <div class="dropdown">
+            <div class="dropdown-btn">
+                <i class="fas fa-home"></i> <!-- أيقونة البيت -->
+            </div>
+            <div class="dropdown-content">
+                <a href="#" onclick="showMainPage()">
+                    <i class="fas fa-home"></i>
+                    <span>الرئيسي</span>
+                </a>
+                <a href="#" onclick="showZofanPage()">
+                    <i class="fas fa-users"></i>
+                    <span>زوفان</span>
+                </a>
+            </div>
         </div>
-        <div class="bio">
-            <p>مـرحـبـا بـك فـي المـوقـع الشخصي جرجس اشرف </p>
-        </div>
-        <hr>
-        <div class="contact-info">
-            <div class="platform">
-                <ul>
-                    <li>
-                        <div class="rectangle-box tiktok">
-                            <a href="https://tiktok.com/@1devil2slayer">
-                                <i class="fab fa-tiktok"></i>
-                                <span>TikTok</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="rectangle-box whatsapp">
-                            <a href="https://wa.me/201208898875">
-                                <i class="fab fa-whatsapp"></i>
-                                <span>WhatsApp</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="rectangle-box facebook">
-                            <a href="https://facebook.com/yourprofile">
-                                <i class="fab fa-facebook"></i>
-                                <span>Facebook</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="rectangle-box instagram">
-                            <a href="https://instagram.com/yourprofile">
-                                <i class="fab fa-instagram"></i>
-                                <span>Instagram</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dropdown">
-                            <div class="rectangle-box dropdown-btn">
-                                <i class="fas fa-ellipsis-h"></i> <!-- أيقونة النقاط الثلاث -->
-                            </div>
-                            <div class="dropdown-content">
-                                <a href="#">
-                                    <i class="fas fa-home"></i>
-                                    <span>الرئيسي</span>
+
+        <!-- الصفحة الرئيسية -->
+        <div id="main-page">
+            <div class="profile">
+                <img style=" border-radius: 25px;height: 200px;width: 200px;" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة النبذة">
+            </div>
+            <div class="bio">
+                <p>مـرحـبـا بـك فـي المـوقـع الشخصي جرجس اشرف </p>
+            </div>
+            <hr>
+            <div class="contact-info">
+                <div class="platform">
+                    <ul>
+                        <li>
+                            <div class="rectangle-box tiktok">
+                                <a href="https://tiktok.com/@1devil2slayer">
+                                    <i class="fab fa-tiktok"></i>
+                                    <span>TikTok</span>
                                 </a>
-                                <a href="https://chat.whatsapp.com/HlWChtsbTAhKe5hBsKwiVl">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rectangle-box whatsapp">
+                                <a href="https://wa.me/201208898875">
                                     <i class="fab fa-whatsapp"></i>
-                                    <span>زوفان</span>
+                                    <span>WhatsApp</span>
                                 </a>
                             </div>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
+                        <li>
+                            <div class="rectangle-box facebook">
+                                <a href="https://facebook.com/yourprofile">
+                                    <i class="fab fa-facebook"></i>
+                                    <span>Facebook</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rectangle-box instagram">
+                                <a href="https://instagram.com/yourprofile">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- صفحة زوفان -->
+        <div id="zofan-page" class="zofan-page">
+            <div class="rectangle-box">
+                <a href="https://chat.whatsapp.com/HlWChtsbTAhKe5hBsKwiVl">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
             </div>
         </div>
     </div>
     <div class="footer">
         <p style="color: #ffffff; font-size: 14px;background-color: rgba(0, 0, 0, 0.7);">الـحـقـوق محـفوظـه لـ  جرجس اشرف 2025 𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬 ©</p>
     </div>
+
+    <script>
+        // وظيفة لإظهار الصفحة الرئيسية
+        function showMainPage() {
+            document.getElementById('main-page').style.display = 'block';
+            document.getElementById('zofan-page').style.display = 'none';
+        }
+
+        // وظيفة لإظهار صفحة زوفان
+        function showZofanPage() {
+            document.getElementById('main-page').style.display = 'none';
+            document.getElementById('zofan-page').style.display = 'block';
+        }
+    </script>
 </body>
 
 </html>
