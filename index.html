@@ -1,16 +1,10 @@
 
-<!doctype html>
-
-<html lang="ar">
+<!DOCTYPE html><html lang="ar">
 <head>
-    <meta name="description" content="هذا الموقع التعريفي جرجس اشرف " />
-    <meta name="keywords" content="𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬">
-    <link rel="icon" type="image/jpg" href="https://i.pinimg.com/236x/7c/e8/95/7ce895b0f82a0e5eaf0b801bb459c0ee.jpg" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="هذا الموقع التعريفي جرجس اشرف">
     <title>𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
@@ -19,11 +13,17 @@
             background-color: #121212;
             color: #ffffff;
             font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .background-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
         }
         .menu-container {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 15px;
+            right: 15px;
         }
         .menu-btn {
             background: none;
@@ -44,64 +44,97 @@
             display: block;
             color: white;
             text-decoration: none;
-            padding: 5px;
+            padding: 8px;
         }
         .menu-content.show-menu {
             display: block;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            border: 3px solid white;
+        }
+        .bio p {
+            font-size: 18px;
+        }
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-info li {
+            margin: 10px 0;
+        }
+        .rectangle-box {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background-color: #222;
+            transition: 0.3s;
+        }
+        .rectangle-box a {
+            color: white;
+            text-decoration: none;
+        }
+        .rectangle-box:hover {
+            background-color: #444;
+        }
+        .footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
         }
     </style>
 </head>
 <body>
     <div class="background-image">
         <img src="https://i.pinimg.com/736x/b7/70/34/b7703463a084b35612411ac3921878a7.jpg" alt="صورة الخلفية">
-    </div><div class="menu-container">
-    <button class="menu-btn">
-        <i class="fas fa-ellipsis-v"></i>
-    </button>
-    <div class="menu-content">
-        <a href="#">الرئيسي</a>
-        <a href="#">القسم 1</a>
-        <a href="#">القسم 2</a>
-        <a href="#">القسم 3</a>
     </div>
-</div>
-
-<div class="container">
-    <div class="profile">
-        <img style="border-radius: 25px;height: 200px;width: 200px;" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة النبذة">
+    <div class="menu-container">
+        <button class="menu-btn">
+            <i class="fas fa-ellipsis-v"></i>
+        </button>
+        <div class="menu-content">
+            <a href="#">الرئيسي</a>
+            <a href="#">القسم 1</a>
+            <a href="#">القسم 2</a>
+            <a href="#">القسم 3</a>
+        </div>
     </div>
-    <div class="bio">
-        <p>مـرحـبـا بـك فـي المـوقـع الشخصي جرجس اشرف </p>
-    </div>
-    <hr>
-    <div class="contact-info">
-        <div class="platform">
+    <div class="container">
+        <div class="profile">
+            <img src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة النبذة">
+        </div>
+        <div class="bio">
+            <p>مـرحـبـا بـك فـي المـوقـع الشخصي جرجس اشرف</p>
+        </div>
+        <hr>
+        <div class="contact-info">
             <ul>
-                <li><div class="rectangle-box tiktok"><a href="https://tiktok.com/@1devil2slayer"><i class="fab fa-tiktok"></i> TikTok</a></div></li>
-                <li><div class="rectangle-box whatsapp"><a href="https://wa.me/201208898875"><i class="fab fa-whatsapp"></i> WhatsApp</a></div></li>
-                <li><div class="rectangle-box facebook"><a href="https://www.facebook.com/share/1WpTH3WAhf/"><i class="fab fa-facebook"></i> Facebook</a></div></li>
-                <li><div class="rectangle-box instagram"><a href="https://www.instagram.com/luffy28178?igsh=MWk3Y25iejExdmdndg=="><i class="fab fa-instagram"></i> Instagram</a></div></li>
+                <li><div class="rectangle-box"><a href="https://tiktok.com/@1devil2slayer"><i class="fab fa-tiktok"></i> TikTok</a></div></li>
+                <li><div class="rectangle-box"><a href="https://wa.me/201208898875"><i class="fab fa-whatsapp"></i> WhatsApp</a></div></li>
+                <li><div class="rectangle-box"><a href="https://www.facebook.com/share/1WpTH3WAhf/"><i class="fab fa-facebook"></i> Facebook</a></div></li>
+                <li><div class="rectangle-box"><a href="https://www.instagram.com/luffy28178?igsh=MWk3Y25iejExdmdndg=="><i class="fab fa-instagram"></i> Instagram</a></div></li>
             </ul>
         </div>
     </div>
-</div>
-<div class="footer">
-    <p style="color: #ffffff; font-size: 14px;background-color: rgba(0, 0, 0, 0.7);">الـحـقـوق محـفوظـه لـ جرجس اشرف 2025 𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬 ©</p>
-</div>
-
-<script>
-    document.querySelector(".menu-btn").addEventListener("click", function () {
-        document.querySelector(".menu-content").classList.toggle("show-menu");
-    });
-
-    document.addEventListener("click", function (event) {
-        let menu = document.querySelector(".menu-content");
-        let button = document.querySelector(".menu-btn");
-        if (!menu.contains(event.target) && !button.contains(event.target)) {
-            menu.classList.remove("show-menu");
-        }
-    });
-</script>
-
+    <div class="footer">
+        <p>الـحـقـوق محـفوظـه لـ جرجس اشرف 2025 ©</p>
+    </div>
+    <script>
+        document.querySelector(".menu-btn").addEventListener("click", function () {
+            document.querySelector(".menu-content").classList.toggle("show-menu");
+        });
+        document.addEventListener("click", function (event) {
+            let menu = document.querySelector(".menu-content");
+            let button = document.querySelector(".menu-btn");
+            if (!menu.contains(event.target) && !button.contains(event.target)) {
+                menu.classList.remove("show-menu");
+            }
+        });
+    </script>
 </body>
 </html>
