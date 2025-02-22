@@ -5,7 +5,7 @@
 <head>
     <meta name="description" content="هذا الموقع التعريفي جرجس اشرف " />
     <meta name="keywords" content="𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬">
-    <link rel="icon" type="image/jpg" href="https://i.pinimg.com/236x极客时间/e8/95/7ce895b0f82a0e5eaf0b801bb459c0ee.jpg" />
+    <link rel="icon" type="image/jpg" href="https://i.pinimg.com/236x/7c/e8/95/7ce895b0f82a0e5eaf0b801bb459c0ee.jpg" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</title>
@@ -59,7 +59,7 @@
             text-align: center;
             color: #ffffff;
             background-color: rgba(0, 0, 0, 0.7);
-            border: 2极客时间 solid #000000;
+            border: 2px solid #000000;
             padding: 10px;
             animation: slideLeft 1s ease-in-out;
         }
@@ -96,7 +96,7 @@
             transition: background-color 0.3s ease;
         }
 
-        /* ألوان خاصة بكل منصة */
+        /* ألوان خاصة بكل منصة */
         .platform ul li .rectangle-box.tiktok {
             background-color: rgba(0, 0, 0, 0.7); /* لون TikTok */
         }
@@ -186,7 +186,7 @@
             }
         }
 
-        /* إضافة قائمة منسدلة */
+        /* إضافة قائمة منسدلة */
         .dropdown {
             position: absolute;
             top: 20px;
@@ -228,7 +228,7 @@
             border-radius: 10px;
             cursor: pointer;
             text-align: center;
-            background-color: rgba(0, 0, 极客时间, 0.7);
+            background-color: rgba(0, 0, 0, 0.7);
             color: #ffffff;
             font-size: 24px;
         }
@@ -237,30 +237,34 @@
             background-color: rgba(0, 0, 0, 0.9);
         }
 
-        /* أيقونة البحث العائمة */
-        .floating-search {
-            position: fixed;
-            left: 20px;
-            bottom: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 50%;
-            width: 50px;
+        /* صفحة مواقع التواصل */
+        .social-page {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* صفحة زوفان */
+        .zofan-page {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .zofan-page .rectangle-box {
+            width: 150px;
             height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin: 10px auto;
+            padding: 10px;
+            border: 2px solid transparent;
+            border-radius: 10px;
             cursor: pointer;
-            z-index: 1000;
+            text-align: center;
+            background-color: rgba(37, 211, 102, 0.7); /* لون WhatsApp */
             transition: background-color 0.3s ease;
         }
 
-        .floating-search:hover {
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-
-        .floating-search i {
-            color: #ffffff;
-            font-size: 24px;
+        .zofan-page .rectangle-box:hover {
+            background-color: rgba(37, 211, 102, 0.9); /* لون WhatsApp عند التحويم */
         }
     </style>
 </head>
@@ -270,10 +274,10 @@
         <img src="https://i.pinimg.com/736x/b7/70/34/b7703463a084b35612411ac3921878a7.jpg" alt="صورة الخلفية">
     </div>
     <div class="container">
-        <!-- أيقونة البيت (القائمة المنسدلة) -->
+        <!-- أيقونة البيت (القائمة المنسدلة) -->
         <div class="dropdown">
             <div class="dropdown-btn">
-                <i class="fas fa-home"></i> <!-- أيقونة البيت -->
+                <i class="fas fa-home"></i> <!-- أيقونة البيت -->
             </div>
             <div class="dropdown-content">
                 <a href="#" onclick="showZofanPage()">
@@ -287,7 +291,7 @@
             </div>
         </div>
 
-        <!-- صفحة زوفان (الصفحة الرئيسية) -->
+        <!-- صفحة زوفان (الصفحة الرئيسية) -->
         <div id="zofan-page" class="zofan-page">
             <div class="profile">
                 <img style=" border-radius: 25px;height: 200px;width: 200px;" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة النبذة">
@@ -298,7 +302,7 @@
             <hr>
             <div class="rectangle-box">
                 <a href="https://chat.whatsapp.com/HlWChtsbTAhKe5hBsKwiVl">
-                    <i class极客时间="fab fa-whatsapp"></i>
+                    <i class="fab fa-whatsapp"></i>
                     <span>WhatsApp</span>
                 </a>
             </div>
@@ -307,7 +311,7 @@
         <!-- صفحة مواقع التواصل (الاختيارية) -->
         <div id="social-page" class="social-page">
             <div class="bio">
-                <p>أهلًا بك في مواقع التواصل الاجتماعي الخاص بالمبرمج</p>
+                <p>أهلًا بك في مواقع التواصل الاجتماعي الخاص بالمبرمج</p>
             </div>
             <div class="platform">
                 <ul>
@@ -328,9 +332,9 @@
                         </div>
                     </li>
                     <li>
-                        <div class极客时间="rectangle-box facebook">
+                        <div class="rectangle-box facebook">
                             <a href="https://facebook.com/yourprofile">
-                                <极客时间 class="fab fa-facebook"></i>
+                                <i class="fab fa-facebook"></i>
                                 <span>Facebook</span>
                             </a>
                         </div>
@@ -351,36 +355,23 @@
         <p style="color: #ffffff; font-size: 14px;background-color: rgba(0, 0, 0, 0.7);">الـحـقـوق محـفوظـه لـ  جرجس اشرف 2025 𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬 ©</p>
     </div>
 
-    <!-- أيقونة البحث العائمة -->
-    <div class="floating-search" onclick="openGoogleSearch()">
-        <i class="fas fa-search"></i>
-    </div>
-
     <script>
-        // وظيفة لإظهار صفحة زوفان (الصفحة الرئيسية)
+        // وظيفة لإظهار صفحة زوفان (الصفحة الرئيسية)
         function showZofanPage() {
             document.getElementById('zofan-page').style.display = 'block';
             document.getElementById('social-page').style.display = 'none';
         }
 
-        // وظيفة لإظهار صفحة مواقع التواصل
+        // وظيفة لإظهار صفحة مواقع التواصل
         function showSocialPage() {
             document.getElementById('zofan-page').style.display = 'none';
             document.getElementById('social-page').style.display = 'block';
         }
 
-        // إظهار صفحة زوفان كصفحة رئيسية عند التحميل
+        // إظهار صفحة زوفان كصفحة رئيسية عند التحميل
         window.onload = function () {
             showZofanPage();
         };
-
-        // وظيفة البحث في جوجل
-        function openGoogleSearch() {
-            const query = prompt("أدخل ما تريد البحث عنه في جوجل:");
-            if (query) {
-                window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
-            }
-        }
     </script>
 </body>
 
