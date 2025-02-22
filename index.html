@@ -4,85 +4,58 @@
 <html lang="ar">
 <head>
     <meta name="description" content="هذا الموقع التعريفي جرجس اشرف " />
-    <meta name="keywords" content="𝕲𝕼𝕺𝕽𝕺𝕸 𝕰𝕸𝕽𝕺𝕼 ⃝ 🇪🇬">
+    <meta name="keywords" content="𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬">
     <link rel="icon" type="image/jpg" href="https://i.pinimg.com/236x/7c/e8/95/7ce895b0f82a0e5eaf0b801bb459c0ee.jpg" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝕲𝕼𝕺𝕽𝕺𝕸 𝕰𝕸𝕽𝕺𝕼 ⃝ 🇪🇬</title>
+    <title>𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-        }
-        .menu {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-        .menu button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        .menu-content {
-            display: none;
-            position: absolute;
-            background: rgba(0, 0, 0, 0.8);
-            right: 10px;
-            top: 40px;
-            border-radius: 5px;
-            padding: 10px;
-        }
-        .menu-content a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 5px 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
-    <script>
-        function toggleMenu() {
-            document.getElementById("menuDropdown").classList.toggle("hidden");
-        }
-        function showSection(section) {
-            document.getElementById("main").classList.add("hidden");
-            document.getElementById("private").classList.add("hidden");
-            document.getElementById(section).classList.remove("hidden");
-        }
-    </script>
 </head>
 <body>
+    <!-- نظام الثلاث نقط -->
     <div class="menu">
-        <button onclick="toggleMenu()">&#8942;</button>
-        <div id="menuDropdown" class="menu-content hidden">
-            <a href="#" onclick="showSection('main')">الرئيسي</a>
-            <a href="#" onclick="showSection('private')">خاص</a>
+        <button class="menu-btn">☰</button>
+        <div class="menu-content">
+            <a href="#main">الرئيسي</a>
+            <a href="#private">الخاص</a>
+        </div>
+    </div><!-- المحتوى الرئيسي -->
+<div id="main">
+    <div class="background-image">
+        <img src="https://i.pinimg.com/736x/b7/70/34/b7703463a084b35612411ac3921878a7.jpg" alt="صورة الخلفية">
+    </div>
+    <div class="container">
+        <div class="profile">
+            <img style="border-radius: 25px;height: 200px;width: 200px;" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة النبذة">
+        </div>
+        <div class="bio">
+            <p>مـرحـبـا بـك فـي المـوقـع الشخصي جرجس اشرف </p>
+        </div>
+        <hr>
+        <div class="contact-info">
+            <div class="platform">
+                <ul>
+                    <li><div class="rectangle-box tiktok"><a href="https://tiktok.com/@1devil2slayer"><i class="fab fa-tiktok"></i> TikTok</a></div></li>
+                    <li><div class="rectangle-box whatsapp"><a href="https://wa.me/201208898875"><i class="fab fa-whatsapp"></i> WhatsApp</a></div></li>
+                    <li><div class="rectangle-box facebook"><a href="https://www.facebook.com/share/1WpTH3WAhf/"><i class="fab fa-facebook"></i> Facebook</a></div></li>
+                    <li><div class="rectangle-box instagram"><a href="https://www.instagram.com/luffy28178?igsh=MWk3Y25iejExdmdndg=="><i class="fab fa-instagram"></i> Instagram</a></div></li>
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="container" id="main">
-        <h1>مرحبًا بك في الرئيسي</h1>
-        <p>هذا هو المحتوى الرئيسي.</p>
-    </div>
-    <div class="container hidden" id="private">
-        <h1>قسم خاص</h1>
-        <p>هذا المحتوى خاص ولا يظهر إلا عند التبديل إليه.</p>
-    </div>
+</div>
+
+<!-- القسم الخاص -->
+<div id="private" style="display: none;">
+    <h2>محتوى خاص</h2>
+    <p>هذا القسم يحتوي على معلومات خاصة.</p>
+</div>
+
+<div class="footer">
+    <p style="color: #ffffff; font-size: 14px;background-color: rgba(0, 0, 0, 0.7);">الـحـقـوق محـفوظـه لـ جرجس اشرف 2025 𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬 ©</p>
+</div>
+
 </body>
 </html>
