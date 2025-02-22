@@ -96,7 +96,7 @@
             transition: background-color 0.3s ease;
         }
 
-        /* ألوان خاصة بكل منصة */
+        /* ألوان خاصة بكل منصة */
         .platform ul li .rectangle-box.tiktok {
             background-color: rgba(0, 0, 0, 0.7); /* لون TikTok */
         }
@@ -186,7 +186,7 @@
             }
         }
 
-        /* إضافة قائمة منسدلة */
+        /* إضافة قائمة منسدلة */
         .dropdown {
             position: absolute;
             top: 20px;
@@ -274,10 +274,10 @@
         <img src="https://i.pinimg.com/736x/b7/70/34/b7703463a084b35612411ac3921878a7.jpg" alt="صورة الخلفية">
     </div>
     <div class="container">
-        <!-- أيقونة البيت (القائمة المنسدلة) -->
+        <!-- أيقونة البيت (القائمة المنسدلة) -->
         <div class="dropdown">
             <div class="dropdown-btn">
-                <i class="fas fa-home"></i> <!-- أيقونة البيت -->
+                <i class="fas fa-home"></i> <!-- أيقونة البيت -->
             </div>
             <div class="dropdown-content">
                 <a href="#" onclick="showZofanPage()">
@@ -291,13 +291,13 @@
             </div>
         </div>
 
-        <!-- صفحة زوفان (الصفحة الرئيسية) -->
+        <!-- صفحة زوفان (الصفحة الرئيسية) -->
         <div id="zofan-page" class="zofan-page">
             <div class="profile">
                 <img style=" border-radius: 25px;height: 200px;width: 200px;" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة النبذة">
             </div>
             <div class="bio">
-                <p>مـرحـبـا بـك فـي المـوقـع الشخصي جرجس اشرف </p>
+                <p>مرحبًا بك في موقع زوفان</p>
             </div>
             <hr>
             <div class="rectangle-box">
@@ -310,6 +310,9 @@
 
         <!-- صفحة مواقع التواصل (الاختيارية) -->
         <div id="social-page" class="social-page">
+            <div class="bio">
+                <p>أهلًا بك في مواقع التواصل الاجتماعي الخاص بالمبرمج</p>
+            </div>
             <div class="platform">
                 <ul>
                     <li>
@@ -353,19 +356,19 @@
     </div>
 
     <script>
-        // وظيفة لإظهار صفحة زوفان (الصفحة الرئيسية)
+        // وظيفة لإظهار صفحة زوفان (الصفحة الرئيسية)
         function showZofanPage() {
             document.getElementById('zofan-page').style.display = 'block';
             document.getElementById('social-page').style.display = 'none';
         }
 
-        // وظيفة لإظهار صفحة مواقع التواصل
+        // وظيفة لإظهار صفحة مواقع التواصل
         function showSocialPage() {
             document.getElementById('zofan-page').style.display = 'none';
             document.getElementById('social-page').style.display = 'block';
         }
 
-        // إظهار صفحة زوفان كصفحة رئيسية عند التحميل
+        // إظهار صفحة زوفان كصفحة رئيسية عند التحميل
         window.onload = function () {
             showZofanPage();
         };
