@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</title>
     <meta thhp-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
@@ -50,9 +49,12 @@
         }
 
         .profile img {
-            width: 100%;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
             display: block;
             margin: 0 auto 20px;
+            border: 5px solid #333;
         }
 
         .bio {
@@ -62,10 +64,6 @@
             border: 2px solid #000000;
             padding: 10px;
             animation: slideLeft 1s ease-in-out;
-        }
-
-        .contact-info {
-            text-align: center;
         }
 
         .platform {
@@ -91,7 +89,6 @@
             border-radius: 10px;
             cursor: pointer;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.7);
             animation: slideLeft 1s ease-in-out;
             transition: background-color 0.3s ease;
         }
@@ -102,7 +99,7 @@
         }
 
         .platform ul li .rectangle-box.tiktok:hover {
-            background-color: rgba(255, 0, 80, 0.7); /* لون TikTok عند التحويم */
+            background-color: rgba(0, 0, 0, 0.9); /* لون TikTok عند التحويم */
         }
 
         .platform ul li .rectangle-box.whatsapp {
@@ -164,16 +161,6 @@
             }
         }
 
-        .my-link {
-            text-decoration: none;
-            color: #000;
-        }
-
-        .my-link:hover {
-            text-decoration: underline;
-            color: rgb(0, 140, 255);
-        }
-
         @keyframes slideLeft {
             from {
                 opacity: 0;
@@ -188,10 +175,11 @@
 
         /* إضافة قائمة منسدلة */
         .dropdown {
-            position: absolute;
+            position: fixed;
             top: 20px;
             left: 20px;
             display: inline-block;
+            z-index: 1000;
         }
 
         .dropdown-content {
@@ -266,18 +254,82 @@
         .zofan-page .rectangle-box:hover {
             background-color: rgba(37, 211, 102, 0.9); /* لون WhatsApp عند التحويم */
         }
+
+        /* صفحة الإعدادات */
+        .settings-page {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .settings-page .bio {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .settings-page .bio p {
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .settings-page .rectangle-box {
+            width: 150px;
+            height: 50px;
+            margin: 10px auto;
+            padding: 10px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            background-color: rgba(24, 119, 242, 0.7); /* لون Facebook */
+            transition: background-color 0.3s ease;
+        }
+
+        .settings-page .rectangle-box:hover {
+            background-color: rgba(24, 119, 242, 0.9); /* لون Facebook عند التحويم */
+        }
+
+        .settings-page input[type="color"] {
+            width: 100%;
+            height: 40px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .reset-button {
+            width: 150px;
+            height: 50px;
+            margin: 10px auto;
+            padding: 10px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            background-color: rgba(255, 0, 0, 0.7); /* لون أحمر */
+            transition: background-color 0.3s ease;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .reset-button:hover {
+            background-color: rgba(255, 0, 0, 0.9); /* لون أحمر عند التحويم */
+        }
     </style>
 </head>
 
 <body>
     <div class="background-image">
-        <img src="https://i.pinimg.com/736x/b7/70/34/b7703463a084b35612411ac3921878a7.jpg" alt="صورة الخلفية">
+        <img id="background-img" src="https://i.pinimg.com/736x/b7/70/34/b7703463a084b35612411ac3921878a7.jpg" alt="صورة الخلفية">
     </div>
     <div class="container">
-        <!-- أيقونة البيت (القائمة المنسدلة) -->
+        <!-- أيقونة الثلاث شرط (القائمة المنسدلة) -->
         <div class="dropdown">
             <div class="dropdown-btn">
-                <i class="fas fa-home"></i> <!-- أيقونة البيت -->
+                <i class="fas fa-bars"></i> <!-- أيقونة الثلاث شرط -->
             </div>
             <div class="dropdown-content">
                 <a href="#" onclick="showZofanPage()">
@@ -288,19 +340,23 @@
                     <i class="fas fa-share-alt"></i>
                     <span>مواقع التواصل</span>
                 </a>
+                <a href="#" onclick="showSettingsPage()">
+                    <i class="fas fa-cog"></i>
+                    <span>الإعدادات</span>
+                </a>
             </div>
         </div>
 
         <!-- صفحة زوفان (الصفحة الرئيسية) -->
         <div id="zofan-page" class="zofan-page">
             <div class="profile">
-                <img style=" border-radius: 25px;height: 200px;width: 200px;" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة النبذة">
+                <img id="profile-img" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة النبذة">
             </div>
             <div class="bio">
                 <p>مرحبًا بك في موقع زوفان</p>
             </div>
             <hr>
-            <div class="rectangle-box">
+            <div class="rectangle-box whatsapp">
                 <a href="https://chat.whatsapp.com/HlWChtsbTAhKe5hBsKwiVl">
                     <i class="fab fa-whatsapp"></i>
                     <span>WhatsApp</span>
@@ -310,6 +366,9 @@
 
         <!-- صفحة مواقع التواصل (الاختيارية) -->
         <div id="social-page" class="social-page">
+            <div class="profile">
+                <img src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة المبرمج">
+            </div>
             <div class="bio">
                 <p>أهلًا بك في مواقع التواصل الاجتماعي الخاص بالمبرمج</p>
             </div>
@@ -350,6 +409,33 @@
                 </ul>
             </div>
         </div>
+
+        <!-- صفحة الإعدادات -->
+        <div id="settings-page" class="settings-page">
+            <div class="profile">
+                <img id="settings-profile-img" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة الإعدادات">
+            </div>
+            <div class="bio">
+                <p>مرحبًا بك في صفحة الإعدادات</p>
+            </div>
+            <div class="rectangle-box">
+                <label for="icon-color">
+                    <i class="fas fa-palette"></i>
+                    <span>تغيير لون الأيقونة</span>
+                </label>
+                <input type="color" id="icon-color" onchange="changeIconColor(this.value)">
+            </div>
+            <div class="rectangle-box">
+                <label for="box-color">
+                    <i class="fas fa-palette"></i>
+                    <span>تغيير لون القوالب</span>
+                </label>
+                <input type="color" id="box-color" onchange="changeBoxColor(this.value)">
+            </div>
+            <div class="reset-button" onclick="resetSettings()">
+                إعادة ضبط الإعدادات
+            </div>
+        </div>
     </div>
     <div class="footer">
         <p style="color: #ffffff; font-size: 14px;background-color: rgba(0, 0, 0, 0.7);">الـحـقـوق محـفوظـه لـ  جرجس اشرف 2025 𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬 ©</p>
@@ -360,12 +446,64 @@
         function showZofanPage() {
             document.getElementById('zofan-page').style.display = 'block';
             document.getElementById('social-page').style.display = 'none';
+            document.getElementById('settings-page').style.display = 'none';
         }
 
         // وظيفة لإظهار صفحة مواقع التواصل
         function showSocialPage() {
             document.getElementById('zofan-page').style.display = 'none';
             document.getElementById('social-page').style.display = 'block';
+            document.getElementById('settings-page').style.display = 'none';
+        }
+
+        // وظيفة لإظهار صفحة الإعدادات
+        function showSettingsPage() {
+            document.getElementById('zofan-page').style.display = 'none';
+            document.getElementById('social-page').style.display = 'none';
+            document.getElementById('settings-page').style.display = 'block';
+        }
+
+        // وظيفة لتغيير لون الأيقونة
+        function changeIconColor(color) {
+            const icons = document.querySelectorAll('.rectangle-box i');
+            icons.forEach(icon => {
+                icon.style.color = color;
+            });
+        }
+
+        // وظيفة لتغيير لون القوالب
+        function changeBoxColor(color) {
+            const boxes = document.querySelectorAll('.rectangle-box');
+            boxes.forEach(box => {
+                box.style.backgroundColor = color;
+            });
+        }
+
+        // وظيفة لإعادة ضبط الإعدادات
+        function resetSettings() {
+            // إعادة ألوان الأيقونات إلى اللون الأبيض
+            changeIconColor('#ffffff');
+
+            // إعادة ألوان القوالب إلى ألوان التطبيقات الأصلية
+            const tiktokBoxes = document.querySelectorAll('.rectangle-box.tiktok');
+            tiktokBoxes.forEach(box => {
+                box.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+            });
+
+            const whatsappBoxes = document.querySelectorAll('.rectangle-box.whatsapp');
+            whatsappBoxes.forEach(box => {
+                box.style.backgroundColor = 'rgba(37, 211, 102, 0.7)';
+            });
+
+            const facebookBoxes = document.querySelectorAll('.rectangle-box.facebook');
+            facebookBoxes.forEach(box => {
+                box.style.backgroundColor = 'rgba(24, 119, 242, 0.7)';
+            });
+
+            const instagramBoxes = document.querySelectorAll('.rectangle-box.instagram');
+            instagramBoxes.forEach(box => {
+                box.style.background = 'linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)';
+            });
         }
 
         // إظهار صفحة زوفان كصفحة رئيسية عند التحميل
