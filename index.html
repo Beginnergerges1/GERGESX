@@ -20,141 +20,88 @@
             color: #ffffff;
             font-family: Arial, sans-serif;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
+        .menu-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
         }
-        .background-image {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        .background-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .profile {
-            margin-bottom: 20px;
-            animation: slideRight 1s ease-in-out;
-        }
-        .profile img {
-            width: 100%;
-            display: block;
-            margin: 0 auto 20px;
-        }
-        .bio {
-            text-align: center;
-            color: #ffffff;
-            background-color: rgba(0, 0, 0, 0.7);
-            border: 2px solid #000000;
-            padding: 10px;
-            animation: slideLeft 1s ease-in-out;
-        }
-        .contact-info {
-            text-align: center;
-        }
-        .platform {
-            margin-top: 20px;
-            animation: slideLeft 1s ease-in-out;
-        }
-        .platform ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .platform ul li {
-            margin-bottom: 5px;
-        }
-        .platform ul li .rectangle-box {
-            width: 150px;
-            height: 50px;
-            margin: 10px auto;
-            padding: 10px;
-            border-radius: 10px;
-            cursor: pointer;
-            text-align: center;
+        .menu-btn {
+            background: none;
+            border: none;
             color: white;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .platform ul li .tiktok { background-color: #000000; }
-        .platform ul li .whatsapp { background-color: #25D366; }
-        .platform ul li .facebook { background-color: #1877F2; }
-        .platform ul li .instagram { background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7); }
-        .platform ul li a {
-            text-decoration: none;
-            font-size: 14px;
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .platform ul li a i {
             font-size: 24px;
+            cursor: pointer;
         }
-        .footer {
-            width: 100%;
-            padding: 10px 0;
-            text-align: center;
+        .menu-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+            padding: 10px;
         }
-        .footer img {
-            max-width: 100%;
+        .menu-content a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 5px;
         }
-        @keyframes slideRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        @keyframes slideLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .menu-content.show-menu {
+            display: block;
         }
     </style>
 </head>
 <body>
     <div class="background-image">
         <img src="https://i.pinimg.com/736x/b7/70/34/b7703463a084b35612411ac3921878a7.jpg" alt="صورة الخلفية">
+    </div><div class="menu-container">
+    <button class="menu-btn">
+        <i class="fas fa-ellipsis-v"></i>
+    </button>
+    <div class="menu-content">
+        <a href="#">الرئيسي</a>
+        <a href="#">القسم 1</a>
+        <a href="#">القسم 2</a>
+        <a href="#">القسم 3</a>
     </div>
-    <div class="container">
-        <div class="profile">
-            <img style="border-radius: 25px;height: 200px;width: 200px;" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة النبذة">
-        </div>
-        <div class="bio">
-            <p>مـرحـبـا بـك فـي المـوقـع الشخصي جرجس اشرف </p>
-        </div>
-        <hr>
-        <div class="contact-info">
-            <div class="platform">
-                <ul>
-                    <li><div class="rectangle-box tiktok"><a href="https://tiktok.com/@1devil2slayer"><i class="fab fa-tiktok"></i> TikTok</a></div></li>
-                    <li><div class="rectangle-box whatsapp"><a href="https://wa.me/201208898875"><i class="fab fa-whatsapp"></i> WhatsApp</a></div></li>
-                    <li><div class="rectangle-box facebook"><a href="https://www.facebook.com/share/1WpTH3WAhf/"><i class="fab fa-facebook"></i> Facebook</a></div></li>
-                    <li><div class="rectangle-box instagram"><a href="https://www.instagram.com/luffy28178?igsh=MWk3Y25iejExdmdndg=="><i class="fab fa-instagram"></i> Instagram</a></div></li>
-                </ul>
-            </div>
+</div>
+
+<div class="container">
+    <div class="profile">
+        <img style="border-radius: 25px;height: 200px;width: 200px;" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة النبذة">
+    </div>
+    <div class="bio">
+        <p>مـرحـبـا بـك فـي المـوقـع الشخصي جرجس اشرف </p>
+    </div>
+    <hr>
+    <div class="contact-info">
+        <div class="platform">
+            <ul>
+                <li><div class="rectangle-box tiktok"><a href="https://tiktok.com/@1devil2slayer"><i class="fab fa-tiktok"></i> TikTok</a></div></li>
+                <li><div class="rectangle-box whatsapp"><a href="https://wa.me/201208898875"><i class="fab fa-whatsapp"></i> WhatsApp</a></div></li>
+                <li><div class="rectangle-box facebook"><a href="https://www.facebook.com/share/1WpTH3WAhf/"><i class="fab fa-facebook"></i> Facebook</a></div></li>
+                <li><div class="rectangle-box instagram"><a href="https://www.instagram.com/luffy28178?igsh=MWk3Y25iejExdmdndg=="><i class="fab fa-instagram"></i> Instagram</a></div></li>
+            </ul>
         </div>
     </div>
-    <div class="footer">
-        <p style="color: #ffffff; font-size: 14px;background-color: rgba(0, 0, 0, 0.7);">الـحـقـوق محـفوظـه لـ جرجس اشرف 2025 𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬 ©</p>
-    </div>
+</div>
+<div class="footer">
+    <p style="color: #ffffff; font-size: 14px;background-color: rgba(0, 0, 0, 0.7);">الـحـقـوق محـفوظـه لـ جرجس اشرف 2025 𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬 ©</p>
+</div>
+
+<script>
+    document.querySelector(".menu-btn").addEventListener("click", function () {
+        document.querySelector(".menu-content").classList.toggle("show-menu");
+    });
+
+    document.addEventListener("click", function (event) {
+        let menu = document.querySelector(".menu-content");
+        let button = document.querySelector(".menu-btn");
+        if (!menu.contains(event.target) && !button.contains(event.target)) {
+            menu.classList.remove("show-menu");
+        }
+    });
+</script>
+
 </body>
 </html>
