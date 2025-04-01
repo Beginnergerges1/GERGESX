@@ -1,752 +1,644 @@
 <!doctype html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 
 <head>
-    <meta name="description" content="هذا الموقع التعريفي جرجس اشرف " />
-    <meta name="keywords" content="𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬">
+    <meta name="description" content="الموقع الشخصي لجورجس أشرف - مصمم ومطور ويب" />
+    <meta name="keywords" content="𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬، جرجس أشرف، مصمم ويب">
     <link rel="icon" type="image/jpg" href="https://i.pinimg.com/236x/7c/e8/95/7ce895b0f82a0e5eaf0b801bb459c0ee.jpg" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</title>
-    <meta thhp-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
+        /* الأنماط الأساسية المشتركة */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
+            padding: 2rem;
             position: relative;
         }
 
-        .background-image {
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* نظام تغيير التصاميم */
+        .theme-selector {
             position: fixed;
-            top: 0;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .theme-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            background: #fff;
+            color: #333;
+        }
+
+        .theme-options {
+            position: absolute;
+            bottom: 70px;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
+            background: white;
+            border-radius: 15px;
+            padding: 10px;
+            display: none;
+            flex-wrap: wrap;
+            width: 200px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .background-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .theme-options.show {
+            display: flex;
+            animation: fadeIn 0.3s ease;
         }
 
-        .profile {
-            margin-bottom: 20px;
-            animation: slideRight 1s ease-in-out;
+        .theme-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
         }
 
-        .profile img {
+        .theme-option:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-option.active {
+            border: 2px solid #000;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* التصميمات المختلفة */
+        
+        /* التصميم الأساسي (الفاتح) */
+        .theme-light {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .theme-light .card {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .theme-light .social-link {
+            background: #4a6fa5;
+            color: white;
+        }
+
+        /* التصميم الداكن */
+        .theme-dark {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .theme-dark .card {
+            background: rgba(30, 30, 30, 0.8);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .theme-dark .social-link {
+            background: #166d67;
+            color: white;
+        }
+
+        /* التصميم ثلاثي الأبعاد */
+        .theme-3d {
+            background-color: #121212;
+            color: #ffffff;
+            perspective: 1000px;
+        }
+
+        .theme-3d .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transform-style: preserve-3d;
+            animation: float3d 6s ease-in-out infinite;
+        }
+
+        @keyframes float3d {
+            0% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+            25% { transform: translateY(-10px) rotateX(5deg) rotateY(5deg); }
+            50% { transform: translateY(0px) rotateX(0deg) rotateY(10deg); }
+            75% { transform: translateY(-10px) rotateX(-5deg) rotateY(-5deg); }
+            100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+        }
+
+        .theme-3d .social-link {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743);
+            color: white;
+        }
+
+        /* التصميم الزهري */
+        .theme-pink {
+            background-color: #fff0f5;
+            color: #333;
+        }
+
+        .theme-pink .card {
+            background: white;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid pink;
+        }
+
+        .theme-pink .social-link {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: white;
+        }
+
+        /* التصميم الأزرق التقني */
+        .theme-tech {
+            background-color: #0f1621;
+            color: #ffffff;
+        }
+
+        .theme-tech .card {
+            background: rgba(15, 22, 33, 0.9);
+            border: 1px solid #1e90ff;
+            box-shadow: 0 0 15px rgba(30, 144, 255, 0.5);
+            border-radius: 5px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .theme-tech .social-link {
+            background: #1e90ff;
+            color: white;
+        }
+
+        /* العناصر المشتركة بين جميع التصاميم */
+        .profile-img {
             width: 200px;
             height: 200px;
             border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
             display: block;
-            margin: 0 auto 20px;
-            border: 5px solid #333;
         }
 
         .bio {
             text-align: center;
-            color: #ffffff;
-            background-color: rgba(0, 0, 0, 0.7);
-            border: 2px solid #000000;
-            padding: 10px;
-            animation: slideLeft 1s ease-in-out;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
         }
 
-        .platform {
-            margin-top: 20px;
-            animation: slideLeft 1s ease-in-out;
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        .platform ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .platform ul li {
-            margin-bottom: 5px;
-        }
-
-        .platform ul li .rectangle-box {
-            width: 150px;
-            height: 50px;
-            margin: 10px auto;
-            padding: 10px;
-            border: 2px solid transparent;
-            border-radius: 10px;
-            cursor: pointer;
-            text-align: center;
-            animation: slideLeft 1s ease-in-out;
-            transition: background-color 0.3s ease;
-        }
-
-        /* ألوان خاصة بكل منصة */
-        .platform ul li .rectangle-box.tiktok {
-            background-color: rgba(0, 0, 0, 0.7); /* لون TikTok */
-        }
-
-        .platform ul li .rectangle-box.tiktok:hover {
-            background-color: rgba(0, 0, 0, 0.9); /* لون TikTok عند التحويم */
-        }
-
-        .platform ul li .rectangle-box.whatsapp {
-            background-color: rgba(37, 211, 102, 0.7); /* لون WhatsApp */
-        }
-
-        .platform ul li .rectangle-box.whatsapp:hover {
-            background-color: rgba(37, 211, 102, 0.9); /* لون WhatsApp عند التحويم */
-        }
-
-        .platform ul li .rectangle-box.facebook {
-            background-color: rgba(24, 119, 242, 0.7); /* لون Facebook */
-        }
-
-        .platform ul li .rectangle-box.facebook:hover {
-            background-color: rgba(24, 119, 242, 0.9); /* لون Facebook عند التحويم */
-        }
-
-        .platform ul li .rectangle-box.instagram {
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); /* لون Instagram */
-        }
-
-        .platform ul li .rectangle-box.instagram:hover {
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #a81a7a);
-        }
-
-        .platform ul li a {
-            color: #ffffff;
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border-radius: 12px;
             text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
-        .platform ul li a i {
-            font-size: 24px;
+        .social-link i {
+            margin-left: 10px;
+            font-size: 1.5rem;
         }
 
-        .platform ul li a span {
-            font-size: 14px;
-        }
-
-        .footer {
-            width: 100%;
-            padding: 10px 0;
+        footer {
             text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
         }
 
-        .footer img {
-            max-width: 100%;
+        /* تصميم صفحة التواصل الاجتماعي */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
-        @keyframes slideRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .social-card {
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
         }
 
-        @keyframes slideLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .social-card:hover {
+            transform: translateY(-5px);
         }
 
-        /* إضافة قائمة منسدلة */
-        .dropdown {
+        .social-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-username {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-followers {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* ألوان منصات التواصل */
+        .tiktok-bg { background: #000000; color: white; }
+        .whatsapp-bg { background: #25D366; color: white; }
+        .facebook-bg { background: #1877F2; color: white; }
+        .instagram-bg { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+        .twitter-bg { background: #1DA1F2; color: white; }
+        .youtube-bg { background: #FF0000; color: white; }
+        .telegram-bg { background: #0088cc; color: white; }
+        .snapchat-bg { background: #FFFC00; color: black; }
+
+        /* القائمة الجانبية */
+        .side-menu {
             position: fixed;
             top: 20px;
-            left: 20px;
-            display: inline-block;
+            right: 20px;
             z-index: 1000;
         }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.9);
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            border-radius: 10px;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: center;
-        }
-
-        .dropdown-content a:hover {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-btn {
+        .menu-btn {
             width: 50px;
             height: 50px;
-            padding: 10px;
-            border: 2px solid transparent;
-            border-radius: 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #ffffff;
-            font-size: 24px;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .dropdown-btn:hover {
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-
-        /* صفحة مواقع التواصل */
-        .social-page {
+        .menu-items {
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background: white;
+            border-radius: 15px;
+            padding: 10px;
             display: none;
-            text-align: center;
-            margin-top: 20px;
+            min-width: 200px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        /* صفحة زوفان */
-        .zofan-page {
-            text-align: center;
-            margin-top: 20px;
+        .menu-items.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
         }
 
-        .zofan-page .rectangle-box {
-            width: 150px;
-            height: 50px;
-            margin: 10px auto;
-            padding: 10px;
-            border: 2px solid transparent;
-            border-radius: 10px;
-            cursor: pointer;
-            text-align: center;
-            background-color: rgba(37, 211, 102, 0.7); /* لون WhatsApp */
-            transition: background-color 0.3s ease;
+        .menu-item {
+            padding: 0.8rem 1rem;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 5px;
         }
 
-        .zofan-page .rectangle-box:hover {
-            background-color: rgba(37, 211, 102, 0.9); /* لون WhatsApp عند التحويم */
+        .menu-item i {
+            margin-left: 10px;
         }
 
-        /* صفحة الإعدادات */
-        .settings-page {
-            display: none;
-            text-align: center;
-            margin-top: 20px;
+        .menu-item:hover {
+            background: rgba(0, 0, 0, 0.05);
         }
 
-        .settings-page .bio {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
+        /* صفحة التواصل */
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
         }
 
-        .settings-page .bio p {
-            font-size: 1.1rem;
-            color: #fff;
+        .form-group {
+            margin-bottom: 1.5rem;
         }
 
-        .settings-page .rectangle-box {
-            width: 150px;
-            height: 50px;
-            margin: 10px auto;
-            padding: 10px;
-            border: 2px solid transparent;
-            border-radius: 10px;
-            cursor: pointer;
-            text-align: center;
-            background-color: rgba(24, 119, 242, 0.7); /* لون Facebook */
-            transition: background-color 0.3s ease;
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
         }
 
-        .settings-page .rectangle-box:hover {
-            background-color: rgba(24, 119, 242, 0.9); /* لون Facebook عند التحويم */
-        }
-
-        .settings-page input[type="color"] {
+        .form-input {
             width: 100%;
-            height: 40px;
-            margin: 10px 0;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #4a6fa5;
+            color: white;
             border: none;
-            border-radius: 5px;
+            padding: 1rem 2rem;
+            border-radius: 8px;
             cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            font-size: 1rem;
+            transition: background 0.3s ease;
         }
 
-        .reset-button {
-            width: 150px;
-            height: 50px;
-            margin: 10px auto;
-            padding: 10px;
-            border: 2px solid transparent;
-            border-radius: 10px;
-            cursor: pointer;
-            text-align: center;
-            background-color: rgba(255, 0, 0, 0.7); /* لون أحمر */
-            transition: background-color 0.3s ease;
-            color: #ffffff;
-            font-size: 14px;
+        .submit-btn:hover {
+            background: #3a5a8a;
         }
 
-        .reset-button:hover {
-            background-color: rgba(255, 0, 0, 0.9); /* لون أحمر عند التحويم */
-        }
-
-        /* صفحة التواصل مع المبرمج */
-        .contact-page {
-            display: none;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .contact-page .bio {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-
-        .contact-page .bio p {
-            font-size: 1.1rem;
-            color: #fff;
-        }
-
-        .contact-page .rectangle-box {
-            width: 150px;
-            height: 50px;
-            margin: 10px auto;
-            padding: 10px;
-            border: 2px solid transparent;
-            border-radius: 10px;
-            cursor: pointer;
-            text-align: center;
-            background-color: rgba(24, 119, 242, 0.7); /* لون Facebook */
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-page .rectangle-box:hover {
-            background-color: rgba(24, 119, 242, 0.9); /* لون Facebook عند التحويم */
-        }
-
-        /* ميزة التصويت */
-        .vote-page {
-            display: none;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .vote-page .bio {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-
-        .vote-page .bio p {
-            font-size: 1.1rem;
-            color: #fff;
-        }
-
-        .vote-page .rectangle-box {
-            width: 150px;
-            height: 50px;
-            margin: 10px auto;
-            padding: 10px;
-            border: 2px solid transparent;
-            border-radius: 10px;
-            cursor: pointer;
-            text-align: center;
-            background-color: rgba(24, 119, 242, 0.7); /* لون Facebook */
-            transition: background-color 0.3s ease;
-        }
-
-        .vote-page .rectangle-box:hover {
-            background-color: rgba(24, 119, 242, 0.9); /* لون Facebook عند التحويم */
-        }
-
-        /* ميزة التخصيص */
-        .customization-page {
-            display: none;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .customization-page .bio {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-
-        .customization-page .bio p {
-            font-size: 1.1rem;
-            color: #fff;
-        }
-
-        .customization-page .rectangle-box {
-            width: 150px;
-            height: 50px;
-            margin: 10px auto;
-            padding: 10px;
-            border: 2px solid transparent;
-            border-radius: 10px;
-            cursor: pointer;
-            text-align: center;
-            background-color: rgba(24, 119, 242, 0.7); /* لون Facebook */
-            transition: background-color 0.3s ease;
-        }
-
-        .customization-page .rectangle-box:hover {
-            background-color: rgba(24, 119, 242, 0.9); /* لون Facebook عند التحويم */
+        /* التكيف مع الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
-<body>
-    <div class="background-image">
-        <img id="background-img" src="https://i.pinimg.com/736x/b7/70/34/b7703463a084b35612411ac3921878a7.jpg" alt="صورة الخلفية">
+<body class="theme-dark">
+    <!-- نظام تغيير التصاميم -->
+    <div class="theme-selector">
+        <div class="theme-btn" id="themeBtn">
+            <i class="fas fa-palette"></i>
+        </div>
+        <div class="theme-options" id="themeOptions">
+            <div class="theme-option active" style="background: #121212;" data-theme="dark"></div>
+            <div class="theme-option" style="background: #f5f5f5;" data-theme="light"></div>
+            <div class="theme-option" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743);" data-theme="3d"></div>
+            <div class="theme-option" style="background: #ff9a9e;" data-theme="pink"></div>
+            <div class="theme-option" style="background: #1e90ff;" data-theme="tech"></div>
+        </div>
     </div>
+
+    <!-- القائمة الجانبية -->
+    <div class="side-menu">
+        <div class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="menu-items" id="menuItems">
+            <a href="#" class="menu-item" onclick="showPage('home')">
+                <i class="fas fa-home"></i>
+                <span>الصفحة الرئيسية</span>
+            </a>
+            <a href="#" class="menu-item" onclick="showPage('social')">
+                <i class="fas fa-share-alt"></i>
+                <span>مواقع التواصل</span>
+            </a>
+            <a href="#" class="menu-item" onclick="showPage('contact')">
+                <i class="fas fa-envelope"></i>
+                <span>تواصل معي</span>
+            </a>
+        </div>
+    </div>
+
     <div class="container">
-        <!-- أيقونة الثلاث شرط (القائمة المنسدلة) -->
-        <div class="dropdown">
-            <div class="dropdown-btn">
-                <i class="fas fa-bars"></i> <!-- أيقونة الثلاث شرط -->
-            </div>
-            <div class="dropdown-content">
-                <a href="#" onclick="showZofanPage()">
-                    <i class="fas fa-home"></i>
-                    <span>زوفان</span>
-                </a>
-                <a href="#" onclick="showSocialPage()">
-                    <i class="fas fa-share-alt"></i>
-                    <span>مواقع التواصل</span>
-                </a>
-                <a href="#" onclick="showContactPage()">
-                    <i class="fas fa-envelope"></i>
-                    <span>التواصل مع المبرمج</span>
-                </a>
-                <a href="#" onclick="showSettingsPage()">
-                    <i class="fas fa-cog"></i>
-                    <span>الإعدادات</span>
-                </a>
-                <a href="#" onclick="showVotePage()">
-                    <i class="fas fa-vote-yea"></i>
-                    <span>التصويت</span>
-                </a>
-                <a href="#" onclick="showCustomizationPage()">
-                    <i class="fas fa-palette"></i>
-                    <span>التخصيص</span>
-                </a>
+        <!-- الصفحة الرئيسية -->
+        <div id="home" class="page active">
+            <div class="card">
+                <img src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة جرجس أشرف" class="profile-img">
+                <div class="bio">
+                    <h1>𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</h1>
+                    <p>مرحباً بك في موقعي الشخصي</p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://chat.whatsapp.com/HlWChtsbTAhKe5hBsKwiVl" class="social-link whatsapp-bg">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>انضم إلى مجموعة الواتساب</span>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <!-- صفحة زوفان (الصفحة الرئيسية) -->
-        <div id="zofan-page" class="zofan-page">
-            <div class="profile">
-                <img id="profile-img" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة النبذة">
-            </div>
-            <div class="bio">
-                <p>مرحبًا بك في موقع زوفان</p>
-            </div>
-            <hr>
-            <!-- الروابط الجديدة -->
-            <div class="rectangle-box facebook">
-                <a href="https://www.facebook.com/share/1B6AZNR5CG/">
-                    <i class="fab fa-facebook"></i>
-                    <span>Facebook</span>
-                </a>
-            </div>
-            <div class="rectangle-box tiktok">
-                <a href="https://www.tiktok.com/@ibrahimmohmd62?_t=ZS-8uCiFcGifW3&_r=1">
-                    <i class="fab fa-tiktok"></i>
-                    <span>TikTok</span>
-                </a>
+        <!-- صفحة مواقع التواصل -->
+        <div id="social" class="page">
+            <div class="card">
+                <h2 style="text-align: center; margin-bottom: 1.5rem;">مواقع التواصل الاجتماعي</h2>
+                
+                <div class="social-grid">
+                    <a href="https://tiktok.com/@1devil2slayer" class="social-card tiktok-bg">
+                        <div class="social-icon"><i class="fab fa-tiktok"></i></div>
+                        <div class="social-username">@1devil2slayer</div>
+                        <div class="social-followers">تابعني على TikTok</div>
+                    </a>
+                    
+                    <a href="https://wa.me/201208898875" class="social-card whatsapp-bg">
+                        <div class="social-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="social-username">+201208898875</div>
+                        <div class="social-followers">راسلني على WhatsApp</div>
+                    </a>
+                    
+                    <a href="https://facebook.com/yourprofile" class="social-card facebook-bg">
+                        <div class="social-icon"><i class="fab fa-facebook-f"></i></div>
+                        <div class="social-username">Georges Ashraf</div>
+                        <div class="social-followers">تابعني على Facebook</div>
+                    </a>
+                    
+                    <a href="https://instagram.com/yourprofile" class="social-card instagram-bg">
+                        <div class="social-icon"><i class="fab fa-instagram"></i></div>
+                        <div class="social-username">@georgesashraf</div>
+                        <div class="social-followers">تابعني على Instagram</div>
+                    </a>
+                    
+                    <!-- يمكنك إضافة أو إزالة أي منصات حسب احتياجاتك -->
+                </div>
             </div>
         </div>
 
-        <!-- صفحة مواقع التواصل (الاختيارية) -->
-        <div id="social-page" class="social-page">
-            <div class="profile">
-                <img src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة المبرمج">
-            </div>
-            <div class="bio">
-                <p>أهلًا بك في مواقع التواصل الاجتماعي الخاص بالمبرمج</p>
-            </div>
-            <div class="platform">
-                <ul>
-                    <li>
-                        <div class="rectangle-box tiktok">
-                            <a href="https://tiktok.com/@1devil2slayer">
-                                <i class="fab fa-tiktok"></i>
-                                <span>TikTok</span>
-                            </a>
+        <!-- صفحة التواصل -->
+        <div id="contact" class="page">
+            <div class="card">
+                <h2 style="text-align: center; margin-bottom: 1.5rem;">تواصل معي</h2>
+                
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formsubmit.co/gerges12gerges34@gmail.com" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                        
+                        <div class="form-group">
+                            <label for="name" class="form-label">الاسم</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
                         </div>
-                    </li>
-                    <li>
-                        <div class="rectangle-box whatsapp">
-                            <a href="https://wa.me/201208898875">
-                                <i class="fab fa-whatsapp"></i>
-                                <span>WhatsApp</span>
-                            </a>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
                         </div>
-                    </li>
-                    <li>
-                        <div class="rectangle-box facebook">
-                            <a href="https://facebook.com/yourprofile">
-                                <i class="fab fa-facebook"></i>
-                                <span>Facebook</span>
-                            </a>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">الرسالة</label>
+                            <textarea id="message" name="message" class="form-textarea" required></textarea>
                         </div>
-                    </li>
-                    <li>
-                        <div class="rectangle-box instagram">
-                            <a href="https://instagram.com/yourprofile">
-                                <i class="fab fa-instagram"></i>
-                                <span>Instagram</span>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- صفحة التواصل مع المبرمج -->
-        <div id="contact-page" class="contact-page">
-            <div class="profile">
-                <img id="contact-profile-img" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة التواصل">
-            </div>
-            <div class="bio">
-                <p>مرحبًا بك في صفحة التواصل مع المبرمج</p>
-            </div>
-            <div class="rectangle-box whatsapp">
-                <a href="https://wa.me/201208898875">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>WhatsApp</span>
-                </a>
-            </div>
-            <div class="rectangle-box email">
-                <a href="mailto:your-email@example.com">
-                    <i class="fas fa-envelope"></i>
-                    <span>البريد الإلكتروني</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- صفحة الإعدادات -->
-        <div id="settings-page" class="settings-page">
-            <div class="profile">
-                <img id="settings-profile-img" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة الإعدادات">
-            </div>
-            <div class="bio">
-                <p>مرحبًا بك في صفحة الإعدادات</p>
-            </div>
-            <div class="rectangle-box">
-                <label for="icon-color">
-                    <i class="fas fa-palette"></i>
-                    <span>تغيير لون الأيقونة</span>
-                </label>
-                <input type="color" id="icon-color" onchange="changeIconColor(this.value)">
-            </div>
-            <div class="rectangle-box">
-                <label for="box-color">
-                    <i class="fas fa-palette"></i>
-                    <span>تغيير لون القوالب</span>
-                </label>
-                <input type="color" id="box-color" onchange="changeBoxColor(this.value)">
-            </div>
-            <div class="reset-button" onclick="resetSettings()">
-                إعادة ضبط الإعدادات
-            </div>
-        </div>
-
-        <!-- صفحة التصويت -->
-        <div id="vote-page" class="vote-page">
-            <div class="profile">
-                <img id="vote-profile-img" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة التصويت">
-            </div>
-            <div class="bio">
-                <p>مرحبًا بك في صفحة التصويت</p>
-            </div>
-            <div class="rectangle-box" onclick="vote('good')">
-                <i class="fas fa-thumbs-up"></i>
-                <span>حلو</span>
-            </div>
-            <div class="rectangle-box" onclick="vote('bad')">
-                <i class="fas fa-thumbs-down"></i>
-                <span>وحش</span>
-            </div>
-        </div>
-
-        <!-- صفحة التخصيص -->
-        <div id="customization-page" class="customization-page">
-            <div class="profile">
-                <img id="customization-profile-img" src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة التخصيص">
-            </div>
-            <div class="bio">
-                <p>مرحبًا بك في صفحة التخصيص</p>
-            </div>
-            <div class="rectangle-box">
-                <label for="font-size">
-                    <i class="fas fa-text-height"></i>
-                    <span>تغيير حجم الخط</span>
-                </label>
-                <input type="range" id="font-size" min="10" max="30" onchange="changeFontSize(this.value)">
+                        
+                        <button type="submit" class="submit-btn">إرسال الرسالة</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-    <div class="footer">
-        <p style="color: #ffffff; font-size: 14px;background-color: rgba(0, 0, 0, 0.7);">الحقوق محفوظة لـ  جرجس اشرف 2025 𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬 ©</p>
-    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2025 𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</p>
+    </footer>
 
     <script>
-        // وظيفة لإظهار صفحة زوفان (الصفحة الرئيسية)
-        function showZofanPage() {
-            document.getElementById('zofan-page').style.display = 'block';
-            document.getElementById('social-page').style.display = 'none';
-            document.getElementById('contact-page').style.display = 'none';
-            document.getElementById('settings-page').style.display = 'none';
-            document.getElementById('vote-page').style.display = 'none';
-            document.getElementById('customization-page').style.display = 'none';
-        }
-
-        // وظيفة لإظهار صفحة مواقع التواصل
-        function showSocialPage() {
-            document.getElementById('zofan-page').style.display = 'none';
-            document.getElementById('social-page').style.display = 'block';
-            document.getElementById('contact-page').style.display = 'none';
-            document.getElementById('settings-page').style.display = 'none';
-            document.getElementById('vote-page').style.display = 'none';
-            document.getElementById('customization-page').style.display = 'none';
-        }
-
-        // وظيفة لإظهار صفحة التواصل مع المبرمج
-        function showContactPage() {
-            document.getElementById('zofan-page').style.display = 'none';
-            document.getElementById('social-page').style.display = 'none';
-            document.getElementById('contact-page').style.display = 'block';
-            document.getElementById('settings-page').style.display = 'none';
-            document.getElementById('vote-page').style.display = 'none';
-            document.getElementById('customization-page').style.display = 'none';
-        }
-
-        // وظيفة لإظهار صفحة الإعدادات
-        function showSettingsPage() {
-            document.getElementById('zofan-page').style.display = 'none';
-            document.getElementById('social-page').style.display = 'none';
-            document.getElementById('contact-page').style.display = 'none';
-            document.getElementById('settings-page').style.display = 'block';
-            document.getElementById('vote-page').style.display = 'none';
-            document.getElementById('customization-page').style.display = 'none';
-        }
-
-        // وظيفة لإظهار صفحة التصويت
-        function showVotePage() {
-            document.getElementById('zofan-page').style.display = 'none';
-            document.getElementById('social-page').style.display = 'none';
-            document.getElementById('contact-page').style.display = 'none';
-            document.getElementById('settings-page').style.display = 'none';
-            document.getElementById('vote-page').style.display = 'block';
-            document.getElementById('customization-page').style.display = 'none';
-        }
-
-        // وظيفة لإظهار صفحة التخصيص
-        function showCustomizationPage() {
-            document.getElementById('zofan-page').style.display = 'none';
-            document.getElementById('social-page').style.display = 'none';
-            document.getElementById('contact-page').style.display = 'none';
-            document.getElementById('settings-page').style.display = 'none';
-            document.getElementById('vote-page').style.display = 'none';
-            document.getElementById('customization-page').style.display = 'block';
-        }
-
-        // وظيفة لتغيير لون الأيقونة
-        function changeIconColor(color) {
-            const icons = document.querySelectorAll('.rectangle-box i');
-            icons.forEach(icon => {
-                icon.style.color = color;
+        // نظام تغيير التصاميم
+        const themeBtn = document.getElementById('themeBtn');
+        const themeOptions = document.getElementById('themeOptions');
+        const themeOptionsList = document.querySelectorAll('.theme-option');
+        
+        themeBtn.addEventListener('click', function() {
+            themeOptions.classList.toggle('show');
+        });
+        
+        // تغيير التصميم عند اختيار أحد الخيارات
+        themeOptionsList.forEach(option => {
+            option.addEventListener('click', function() {
+                const theme = this.getAttribute('data-theme');
+                document.body.className = 'theme-' + theme;
+                
+                // تحديث الخيار النشط
+                themeOptionsList.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                
+                // إخفاء القائمة
+                themeOptions.classList.remove('show');
+                
+                // حفظ التفضيل في localStorage
+                localStorage.setItem('selectedTheme', theme);
             });
-        }
-
-        // وظيفة لتغيير لون القوالب
-        function changeBoxColor(color) {
-            const boxes = document.querySelectorAll('.rectangle-box');
-            boxes.forEach(box => {
-                box.style.backgroundColor = color;
+        });
+        
+        // تحميل التصميم المحفوظ عند بدء التحميل
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('selectedTheme') || 'dark';
+            document.body.className = 'theme-' + savedTheme;
+            
+            // تحديث الخيار النشط
+            themeOptionsList.forEach(opt => {
+                if (opt.getAttribute('data-theme') === savedTheme) {
+                    opt.classList.add('active');
+                } else {
+                    opt.classList.remove('active');
+                }
             });
-        }
-
-        // وظيفة لإعادة ضبط الإعدادات
-        function resetSettings() {
-            // إعادة ألوان الأيقونات إلى اللون الأبيض
-            changeIconColor('#ffffff');
-
-            // إعادة ألوان القوالب إلى ألوان التطبيقات الأصلية
-            const tiktokBoxes = document.querySelectorAll('.rectangle-box.tiktok');
-            tiktokBoxes.forEach(box => {
-                box.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-            });
-
-            const whatsappBoxes = document.querySelectorAll('.rectangle-box.whatsapp');
-            whatsappBoxes.forEach(box => {
-                box.style.backgroundColor = 'rgba(37, 211, 102, 0.7)';
-            });
-
-            const facebookBoxes = document.querySelectorAll('.rectangle-box.facebook');
-            facebookBoxes.forEach(box => {
-                box.style.backgroundColor = 'rgba(24, 119, 242, 0.7)';
-            });
-
-            const instagramBoxes = document.querySelectorAll('.rectangle-box.instagram');
-            instagramBoxes.forEach(box => {
-                box.style.background = 'linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)';
-            });
-        }
-
-        // وظيفة التصويت
-        function vote(voteType) {
-            if (voteType === 'good') {
-                alert('شكرًا لك! الموقع حلو.');
-            } else if (voteType === 'bad') {
-                alert('نأسف لذلك! سنحسن الموقع.');
+        });
+        
+        // إغلاق القائمة عند النقر خارجها
+        document.addEventListener('click', function(event) {
+            if (!themeBtn.contains(event.target) && !themeOptions.contains(event.target)) {
+                themeOptions.classList.remove('show');
             }
+        });
+        
+        // نظام القائمة الجانبية
+        const menuBtn = document.getElementById('menuBtn');
+        const menuItems = document.getElementById('menuItems');
+        
+        menuBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            menuItems.classList.toggle('show');
+        });
+        
+        document.addEventListener('click', function() {
+            menuItems.classList.remove('show');
+        });
+        
+        // نظام تبديل الصفحات
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            
+            // إغلاق القائمة
+            menuItems.classList.remove('show');
+            
+            // التمرير إلى الأعلى
+            window.scrollTo(0, 0);
         }
-
-        // وظيفة تغيير حجم الخط
-        function changeFontSize(size) {
-            document.body.style.fontSize = size + 'px';
+        
+        // إرسال نموذج التواصل
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                // يمكنك إضافة أي تحقق إضافي هنا قبل الإرسال
+                // إذا كان كل شيء صحيحاً، سيتم إرسال النموذج إلى البريد الإلكتروني المحدد
+            });
         }
-
-        // إظهار صفحة زوفان كصفحة رئيسية عند التحميل
-        window.onload = function () {
-            showZofanPage();
-        };
     </script>
 </body>
 
