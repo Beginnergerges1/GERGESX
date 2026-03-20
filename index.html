@@ -5,83 +5,103 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</title>
+<title>جرجس أشرف ⃝ 🇪🇬</title>
 
+<meta name="description" content="الموقع الشخصي لجرجس أشرف - مصمم ومطور ويب">
+<meta name="keywords" content="جرجس أشرف, Georges Ashraf, مطور ويب">
+
+<link rel="icon" href="https://i.pinimg.com/236x/7c/e8/95/7ce895b0f82a0e5eaf0b801bb459c0ee.jpg">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+
+/* ================= أساسيات ================= */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-transition:.3s;
+transition:all .3s ease;
+scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+font-family:'Segoe UI',Tahoma;
+background:#121212;
 color:#fff;
 min-height:100vh;
 }
 
-/* كروت زجاجية */
-.card{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(12px);
-border-radius:20px;
-padding:2rem;
-box-shadow:0 0 30px rgba(0,0,0,.4);
-margin-bottom:2rem;
+/* ================= الحاوية ================= */
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
 }
 
-/* الصورة */
+/* ================= كروت ================= */
+.card{
+background:rgba(255,255,255,0.05);
+border-radius:20px;
+padding:25px;
+margin-bottom:25px;
+backdrop-filter:blur(10px);
+box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* ================= صورة ================= */
 .profile-img{
-width:170px;
-height:170px;
+width:180px;
+height:180px;
 border-radius:50%;
 display:block;
 margin:auto;
-border:3px solid #00c6ff;
+border:3px solid #1e90ff;
 }
 
-/* الاسم */
+/* ================= نص ================= */
 h1{
 text-align:center;
 margin:15px 0;
-font-size:28px;
 }
 
-/* لينكات */
+.bio{
+text-align:center;
+opacity:.8;
+margin-bottom:20px;
+}
+
+/* ================= أزرار ================= */
 .social-link{
 display:flex;
 justify-content:center;
 align-items:center;
 padding:12px;
 border-radius:12px;
-margin-top:10px;
 text-decoration:none;
 font-weight:bold;
-background:#25D366;
-color:#fff;
+margin-top:10px;
 }
 
 .social-link:hover{
 transform:scale(1.05);
 }
 
-/* grid */
+/* ================= Grid ================= */
 .social-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:15px;
 }
 
-/* كارت سوشيال */
+/* ================= كروت السوشيال ================= */
 .social-card{
 padding:20px;
 border-radius:15px;
 text-align:center;
-color:#fff;
 font-weight:bold;
 }
 
@@ -89,34 +109,78 @@ font-weight:bold;
 transform:translateY(-6px) scale(1.03);
 }
 
-/* ألوان */
+/* ================= ألوان ================= */
 .facebook-bg{background:#1877f2;}
-.tiktok-bg{background:#000;}
-.whatsapp-bg{background:#25D366;}
 .instagram-bg{background:linear-gradient(45deg,#f09433,#dc2743);}
+.whatsapp-bg{background:#25D366;}
+.tiktok-bg{background:#000;}
 
-/* زرار */
-button{
-padding:12px;
-border:none;
-border-radius:10px;
-background:#00c6ff;
-color:#fff;
+/* ================= القائمة ================= */
+.menu{
+position:fixed;
+top:20px;
+right:20px;
 cursor:pointer;
-width:100%;
+font-size:25px;
 }
 
-/* Scroll top */
+/* ================= صفحات ================= */
+.page{display:none;}
+.page.active{display:block;}
+
+/* ================= فورم ================= */
+input,textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:8px;
+border:none;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+background:#1e90ff;
+color:#fff;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+/* ================= زرار فوق ================= */
 #topBtn{
 position:fixed;
 bottom:20px;
-right:20px;
-background:#00c6ff;
-border:none;
+left:20px;
 padding:10px;
+border:none;
 border-radius:50%;
+background:#1e90ff;
 display:none;
 cursor:pointer;
+}
+
+/* ================= انيميشن ================= */
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.card{
+animation:fadeIn .6s ease;
+}
+
+/* ================= موبايل ================= */
+@media(max-width:768px){
+.profile-img{
+width:140px;
+height:140px;
+}
 }
 
 </style>
@@ -124,19 +188,32 @@ cursor:pointer;
 
 <body>
 
-<div class="container">
-
-<div class="card">
-<img src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" class="profile-img">
-
-<h1>𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</h1>
-
-<a href="https://chat.whatsapp.com/HlWChtsbTAhKe5hBsKwiVl" class="social-link">
-<i class="fab fa-whatsapp"></i> انضم للجروب
-</a>
+<div class="menu" onclick="toggleMenu()">
+<i class="fas fa-bars"></i>
 </div>
 
+<div class="container">
+
+<!-- الصفحة الرئيسية -->
+<div id="home" class="page active">
 <div class="card">
+
+<img src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" class="profile-img">
+
+<h1>جرجس أشرف ⃝ 🇪🇬</h1>
+<p class="bio">مرحباً بك في موقعي الشخصي</p>
+
+<a href="https://chat.whatsapp.com/HlWChtsbTAhKe5hBsKwiVl" class="social-link whatsapp-bg">
+<i class="fab fa-whatsapp"></i> جروب الواتساب
+</a>
+
+</div>
+</div>
+
+<!-- السوشيال -->
+<div id="social" class="page">
+<div class="card">
+
 <h2 style="text-align:center;">مواقع التواصل</h2>
 
 <div class="social-grid">
@@ -148,18 +225,34 @@ cursor:pointer;
 
 <a href="https://wa.me/201208898875" class="social-card whatsapp-bg">
 <i class="fab fa-whatsapp"></i>
-<p>راسلني</p>
+<p>WhatsApp</p>
 </a>
 
 <a href="https://www.facebook.com/profile.php?id=100063618740750&locale=ar_AR" class="social-card facebook-bg">
-<i class="fab fa-facebook-f"></i>
+<i class="fab fa-facebook"></i>
 <p>Facebook</p>
 </a>
 
-<a href="https://instagram.com/yourprofile" class="social-card instagram-bg">
+<a href="https://www.instagram.com/luffy28178/" class="social-card instagram-bg">
 <i class="fab fa-instagram"></i>
 <p>Instagram</p>
 </a>
+
+</div>
+</div>
+</div>
+
+<!-- تواصل -->
+<div id="contact" class="page">
+<div class="card">
+
+<h2 style="text-align:center;">تواصل معي</h2>
+
+<input placeholder="اسمك">
+<input placeholder="بريدك">
+<textarea placeholder="رسالتك"></textarea>
+
+<button>إرسال</button>
 
 </div>
 </div>
@@ -169,7 +262,14 @@ cursor:pointer;
 <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
 
 <script>
-// زرار الرجوع لفوق
+
+/* صفحات */
+function showPage(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+
+/* زرار فوق */
 let btn=document.getElementById("topBtn");
 
 window.onscroll=function(){
@@ -179,6 +279,7 @@ btn.style.display=window.scrollY>200?"block":"none";
 btn.onclick=function(){
 window.scrollTo({top:0,behavior:"smooth"});
 };
+
 </script>
 
 </body>
