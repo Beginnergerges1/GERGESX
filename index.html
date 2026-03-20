@@ -2,644 +2,184 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta name="description" content="الموقع الشخصي لجورجس أشرف - مصمم ومطور ويب" />
-    <meta name="keywords" content="𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬، جرجس أشرف، مصمم ويب">
-    <link rel="icon" type="image/jpg" href="https://i.pinimg.com/236x/7c/e8/95/7ce895b0f82a0e5eaf0b801bb459c0ee.jpg" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* الأنماط الأساسية المشتركة */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
+<title>𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</title>
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-            position: relative;
-        }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        .page {
-            display: none;
-        }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+transition:.3s;
+}
 
-        .page.active {
-            display: block;
-        }
+body{
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:#fff;
+min-height:100vh;
+}
 
-        /* نظام تغيير التصاميم */
-        .theme-selector {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            z-index: 1000;
-        }
+/* كروت زجاجية */
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+border-radius:20px;
+padding:2rem;
+box-shadow:0 0 30px rgba(0,0,0,.4);
+margin-bottom:2rem;
+}
 
-        .theme-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            background: #fff;
-            color: #333;
-        }
+/* الصورة */
+.profile-img{
+width:170px;
+height:170px;
+border-radius:50%;
+display:block;
+margin:auto;
+border:3px solid #00c6ff;
+}
 
-        .theme-options {
-            position: absolute;
-            bottom: 70px;
-            left: 0;
-            background: white;
-            border-radius: 15px;
-            padding: 10px;
-            display: none;
-            flex-wrap: wrap;
-            width: 200px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
+/* الاسم */
+h1{
+text-align:center;
+margin:15px 0;
+font-size:28px;
+}
 
-        .theme-options.show {
-            display: flex;
-            animation: fadeIn 0.3s ease;
-        }
+/* لينكات */
+.social-link{
+display:flex;
+justify-content:center;
+align-items:center;
+padding:12px;
+border-radius:12px;
+margin-top:10px;
+text-decoration:none;
+font-weight:bold;
+background:#25D366;
+color:#fff;
+}
 
-        .theme-option {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin: 5px;
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
+.social-link:hover{
+transform:scale(1.05);
+}
 
-        .theme-option:hover {
-            transform: scale(1.1);
-        }
+/* grid */
+.social-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
 
-        .theme-option.active {
-            border: 2px solid #000;
-            transform: scale(1.1);
-        }
+/* كارت سوشيال */
+.social-card{
+padding:20px;
+border-radius:15px;
+text-align:center;
+color:#fff;
+font-weight:bold;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+.social-card:hover{
+transform:translateY(-6px) scale(1.03);
+}
 
-        /* التصميمات المختلفة */
-        
-        /* التصميم الأساسي (الفاتح) */
-        .theme-light {
-            background-color: #f5f5f5;
-            color: #333;
-        }
+/* ألوان */
+.facebook-bg{background:#1877f2;}
+.tiktok-bg{background:#000;}
+.whatsapp-bg{background:#25D366;}
+.instagram-bg{background:linear-gradient(45deg,#f09433,#dc2743);}
 
-        .theme-light .card {
-            background: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
+/* زرار */
+button{
+padding:12px;
+border:none;
+border-radius:10px;
+background:#00c6ff;
+color:#fff;
+cursor:pointer;
+width:100%;
+}
 
-        .theme-light .social-link {
-            background: #4a6fa5;
-            color: white;
-        }
+/* Scroll top */
+#topBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#00c6ff;
+border:none;
+padding:10px;
+border-radius:50%;
+display:none;
+cursor:pointer;
+}
 
-        /* التصميم الداكن */
-        .theme-dark {
-            background-color: #121212;
-            color: #ffffff;
-        }
-
-        .theme-dark .card {
-            background: rgba(30, 30, 30, 0.8);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .theme-dark .social-link {
-            background: #166d67;
-            color: white;
-        }
-
-        /* التصميم ثلاثي الأبعاد */
-        .theme-3d {
-            background-color: #121212;
-            color: #ffffff;
-            perspective: 1000px;
-        }
-
-        .theme-3d .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            padding: 2rem;
-            margin-bottom: 2rem;
-            transform-style: preserve-3d;
-            animation: float3d 6s ease-in-out infinite;
-        }
-
-        @keyframes float3d {
-            0% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
-            25% { transform: translateY(-10px) rotateX(5deg) rotateY(5deg); }
-            50% { transform: translateY(0px) rotateX(0deg) rotateY(10deg); }
-            75% { transform: translateY(-10px) rotateX(-5deg) rotateY(-5deg); }
-            100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
-        }
-
-        .theme-3d .social-link {
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743);
-            color: white;
-        }
-
-        /* التصميم الزهري */
-        .theme-pink {
-            background-color: #fff0f5;
-            color: #333;
-        }
-
-        .theme-pink .card {
-            background: white;
-            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border: 1px solid pink;
-        }
-
-        .theme-pink .social-link {
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
-            color: white;
-        }
-
-        /* التصميم الأزرق التقني */
-        .theme-tech {
-            background-color: #0f1621;
-            color: #ffffff;
-        }
-
-        .theme-tech .card {
-            background: rgba(15, 22, 33, 0.9);
-            border: 1px solid #1e90ff;
-            box-shadow: 0 0 15px rgba(30, 144, 255, 0.5);
-            border-radius: 5px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .theme-tech .social-link {
-            background: #1e90ff;
-            color: white;
-        }
-
-        /* العناصر المشتركة بين جميع التصاميم */
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 1.5rem;
-            display: block;
-        }
-
-        .bio {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .social-link i {
-            margin-left: 10px;
-            font-size: 1.5rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-        }
-
-        /* تصميم صفحة التواصل الاجتماعي */
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .social-card {
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .social-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .social-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-username {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .social-followers {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* ألوان منصات التواصل */
-        .tiktok-bg { background: #000000; color: white; }
-        .whatsapp-bg { background: #25D366; color: white; }
-        .facebook-bg { background: #1877F2; color: white; }
-        .instagram-bg { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
-        .twitter-bg { background: #1DA1F2; color: white; }
-        .youtube-bg { background: #FF0000; color: white; }
-        .telegram-bg { background: #0088cc; color: white; }
-        .snapchat-bg { background: #FFFC00; color: black; }
-
-        /* القائمة الجانبية */
-        .side-menu {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        .menu-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .menu-items {
-            position: absolute;
-            top: 70px;
-            right: 0;
-            background: white;
-            border-radius: 15px;
-            padding: 10px;
-            display: none;
-            min-width: 200px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .menu-items.show {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .menu-item {
-            padding: 0.8rem 1rem;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-bottom: 5px;
-        }
-
-        .menu-item i {
-            margin-left: 10px;
-        }
-
-        .menu-item:hover {
-            background: rgba(0, 0, 0, 0.05);
-        }
-
-        /* صفحة التواصل */
-        .contact-form {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 0.8rem;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
-        }
-
-        .form-textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            background: #4a6fa5;
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            width: 100%;
-            font-size: 1rem;
-            transition: background 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background: #3a5a8a;
-        }
-
-        /* التكيف مع الشاشات الصغيرة */
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            .profile-img {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .social-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+</style>
 </head>
 
-<body class="theme-dark">
-    <!-- نظام تغيير التصاميم -->
-    <div class="theme-selector">
-        <div class="theme-btn" id="themeBtn">
-            <i class="fas fa-palette"></i>
-        </div>
-        <div class="theme-options" id="themeOptions">
-            <div class="theme-option active" style="background: #121212;" data-theme="dark"></div>
-            <div class="theme-option" style="background: #f5f5f5;" data-theme="light"></div>
-            <div class="theme-option" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743);" data-theme="3d"></div>
-            <div class="theme-option" style="background: #ff9a9e;" data-theme="pink"></div>
-            <div class="theme-option" style="background: #1e90ff;" data-theme="tech"></div>
-        </div>
-    </div>
+<body>
 
-    <!-- القائمة الجانبية -->
-    <div class="side-menu">
-        <div class="menu-btn" id="menuBtn">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="menu-items" id="menuItems">
-            <a href="#" class="menu-item" onclick="showPage('home')">
-                <i class="fas fa-home"></i>
-                <span>الصفحة الرئيسية</span>
-            </a>
-            <a href="#" class="menu-item" onclick="showPage('social')">
-                <i class="fas fa-share-alt"></i>
-                <span>مواقع التواصل</span>
-            </a>
-            <a href="#" class="menu-item" onclick="showPage('contact')">
-                <i class="fas fa-envelope"></i>
-                <span>تواصل معي</span>
-            </a>
-        </div>
-    </div>
+<div class="container">
 
-    <div class="container">
-        <!-- الصفحة الرئيسية -->
-        <div id="home" class="page active">
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" alt="صورة جرجس أشرف" class="profile-img">
-                <div class="bio">
-                    <h1>𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</h1>
-                    <p>مرحباً بك في موقعي الشخصي</p>
-                </div>
-                
-                <div class="social-links">
-                    <a href="https://chat.whatsapp.com/HlWChtsbTAhKe5hBsKwiVl" class="social-link whatsapp-bg">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>انضم إلى مجموعة الواتساب</span>
-                    </a>
-                </div>
-            </div>
-        </div>
+<div class="card">
+<img src="https://i.pinimg.com/736x/57/2f/9d/572f9db32717dfc90fa2dbb688ca201d.jpg" class="profile-img">
 
-        <!-- صفحة مواقع التواصل -->
-        <div id="social" class="page">
-            <div class="card">
-                <h2 style="text-align: center; margin-bottom: 1.5rem;">مواقع التواصل الاجتماعي</h2>
-                
-                <div class="social-grid">
-                    <a href="https://tiktok.com/@1devil2slayer" class="social-card tiktok-bg">
-                        <div class="social-icon"><i class="fab fa-tiktok"></i></div>
-                        <div class="social-username">@1devil2slayer</div>
-                        <div class="social-followers">تابعني على TikTok</div>
-                    </a>
-                    
-                    <a href="https://wa.me/201208898875" class="social-card whatsapp-bg">
-                        <div class="social-icon"><i class="fab fa-whatsapp"></i></div>
-                        <div class="social-username">+201208898875</div>
-                        <div class="social-followers">راسلني على WhatsApp</div>
-                    </a>
-                    
-                    <a href="https://facebook.com/yourprofile" class="social-card facebook-bg">
-                        <div class="social-icon"><i class="fab fa-facebook-f"></i></div>
-                        <div class="social-username">Georges Ashraf</div>
-                        <div class="social-followers">تابعني على Facebook</div>
-                    </a>
-                    
-                    <a href="https://instagram.com/yourprofile" class="social-card instagram-bg">
-                        <div class="social-icon"><i class="fab fa-instagram"></i></div>
-                        <div class="social-username">@georgesashraf</div>
-                        <div class="social-followers">تابعني على Instagram</div>
-                    </a>
-                    
-                    <!-- يمكنك إضافة أو إزالة أي منصات حسب احتياجاتك -->
-                </div>
-            </div>
-        </div>
+<h1>𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</h1>
 
-        <!-- صفحة التواصل -->
-        <div id="contact" class="page">
-            <div class="card">
-                <h2 style="text-align: center; margin-bottom: 1.5rem;">تواصل معي</h2>
-                
-                <div class="contact-form">
-                    <form id="contactForm" action="https://formsubmit.co/gerges12gerges34@gmail.com" method="POST">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
-                        
-                        <div class="form-group">
-                            <label for="name" class="form-label">الاسم</label>
-                            <input type="text" id="name" name="name" class="form-input" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" class="form-label">البريد الإلكتروني</label>
-                            <input type="email" id="email" name="email" class="form-input" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" class="form-label">الرسالة</label>
-                            <textarea id="message" name="message" class="form-textarea" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">إرسال الرسالة</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+<a href="https://chat.whatsapp.com/HlWChtsbTAhKe5hBsKwiVl" class="social-link">
+<i class="fab fa-whatsapp"></i> انضم للجروب
+</a>
+</div>
 
-    <footer>
-        <p>جميع الحقوق محفوظة &copy; 2025 𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</p>
-    </footer>
+<div class="card">
+<h2 style="text-align:center;">مواقع التواصل</h2>
 
-    <script>
-        // نظام تغيير التصاميم
-        const themeBtn = document.getElementById('themeBtn');
-        const themeOptions = document.getElementById('themeOptions');
-        const themeOptionsList = document.querySelectorAll('.theme-option');
-        
-        themeBtn.addEventListener('click', function() {
-            themeOptions.classList.toggle('show');
-        });
-        
-        // تغيير التصميم عند اختيار أحد الخيارات
-        themeOptionsList.forEach(option => {
-            option.addEventListener('click', function() {
-                const theme = this.getAttribute('data-theme');
-                document.body.className = 'theme-' + theme;
-                
-                // تحديث الخيار النشط
-                themeOptionsList.forEach(opt => opt.classList.remove('active'));
-                this.classList.add('active');
-                
-                // إخفاء القائمة
-                themeOptions.classList.remove('show');
-                
-                // حفظ التفضيل في localStorage
-                localStorage.setItem('selectedTheme', theme);
-            });
-        });
-        
-        // تحميل التصميم المحفوظ عند بدء التحميل
-        window.addEventListener('DOMContentLoaded', function() {
-            const savedTheme = localStorage.getItem('selectedTheme') || 'dark';
-            document.body.className = 'theme-' + savedTheme;
-            
-            // تحديث الخيار النشط
-            themeOptionsList.forEach(opt => {
-                if (opt.getAttribute('data-theme') === savedTheme) {
-                    opt.classList.add('active');
-                } else {
-                    opt.classList.remove('active');
-                }
-            });
-        });
-        
-        // إغلاق القائمة عند النقر خارجها
-        document.addEventListener('click', function(event) {
-            if (!themeBtn.contains(event.target) && !themeOptions.contains(event.target)) {
-                themeOptions.classList.remove('show');
-            }
-        });
-        
-        // نظام القائمة الجانبية
-        const menuBtn = document.getElementById('menuBtn');
-        const menuItems = document.getElementById('menuItems');
-        
-        menuBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            menuItems.classList.toggle('show');
-        });
-        
-        document.addEventListener('click', function() {
-            menuItems.classList.remove('show');
-        });
-        
-        // نظام تبديل الصفحات
-        function showPage(pageId) {
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
-            });
-            document.getElementById(pageId).classList.add('active');
-            
-            // إغلاق القائمة
-            menuItems.classList.remove('show');
-            
-            // التمرير إلى الأعلى
-            window.scrollTo(0, 0);
-        }
-        
-        // إرسال نموذج التواصل
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                // يمكنك إضافة أي تحقق إضافي هنا قبل الإرسال
-                // إذا كان كل شيء صحيحاً، سيتم إرسال النموذج إلى البريد الإلكتروني المحدد
-            });
-        }
-    </script>
+<div class="social-grid">
+
+<a href="https://tiktok.com/@1devil2slayer" class="social-card tiktok-bg">
+<i class="fab fa-tiktok"></i>
+<p>@1devil2slayer</p>
+</a>
+
+<a href="https://wa.me/201208898875" class="social-card whatsapp-bg">
+<i class="fab fa-whatsapp"></i>
+<p>راسلني</p>
+</a>
+
+<a href="https://www.facebook.com/profile.php?id=100063618740750&locale=ar_AR" class="social-card facebook-bg">
+<i class="fab fa-facebook-f"></i>
+<p>Facebook</p>
+</a>
+
+<a href="https://instagram.com/yourprofile" class="social-card instagram-bg">
+<i class="fab fa-instagram"></i>
+<p>Instagram</p>
+</a>
+
+</div>
+</div>
+
+</div>
+
+<button id="topBtn"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+// زرار الرجوع لفوق
+let btn=document.getElementById("topBtn");
+
+window.onscroll=function(){
+btn.style.display=window.scrollY>200?"block":"none";
+};
+
+btn.onclick=function(){
+window.scrollTo({top:0,behavior:"smooth"});
+};
+</script>
+
 </body>
-
 </html>
