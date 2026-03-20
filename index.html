@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="الموقع الشخصي الرسمي لجورجس أشرف - مصمم ومطور ويب محترف">
-    <meta name="keywords" content="جرجس أشرف، جورجس أشرف، مصمم ويب، مطور، مصر، Portfolio">
+    <meta name="keywords" content="جرجس أشرف، جورجس أشرف، مصمم ويب، مطور، مصر، Portfolio، Solo Leveling">
     <meta name="author" content="Georges Ashraf">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
@@ -32,15 +32,20 @@
     
     <style>
         /* ============================================
-           🎨 المتغيرات الأساسية للألوان والخطوط
+           🎨 المتغيرات الأساسية - Solo Leveling Theme
            ============================================ */
         :root {
-            /* الألوان الأساسية */
-            --primary-color: #6366f1;
-            --primary-dark: #4f46e5;
-            --primary-light: #818cf8;
-            --secondary-color: #ec4899;
-            --accent-color: #14b8a6;
+            /* ألوان Solo Leveling الرئيسية */
+            --sl-primary: #7c3aed;
+            --sl-primary-dark: #6d28d9;
+            --sl-primary-light: #a78bfa;
+            --sl-secondary: #06b6d4;
+            --sl-accent: #f43f5e;
+            --sl-glow: #8b5cf6;
+            --sl-system-blue: #00d4ff;
+            --sl-system-purple: #9333ea;
+            --sl-shadow-dark: #0a0a0f;
+            --sl-card-bg: rgba(15, 23, 42, 0.85);
             
             /* ألوان الوضع الفاتح */
             --bg-light: #f8fafc;
@@ -52,47 +57,202 @@
             --shadow-hover-light: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             
             /* ألوان الوضع الداكن */
-            --bg-dark: #0f172a;
-            --bg-card-dark: #1e293b;
+            --bg-dark: #0a0a0f;
+            --bg-card-dark: #111827;
             --text-dark: #f1f5f9;
             --text-muted-dark: #94a3b8;
             --border-dark: #334155;
-            --shadow-dark: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
-            --shadow-hover-dark: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            --shadow-dark: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(139, 92, 246, 0.2);
+            --shadow-hover-dark: 0 25px 50px -12px rgba(139, 92, 246, 0.4);
             
             /* ألوان الوضع الزجاجي */
-            --glass-bg: rgba(30, 41, 59, 0.7);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            --glass-bg: rgba(15, 23, 42, 0.75);
+            --glass-border: rgba(139, 92, 246, 0.3);
+            --glass-shadow: 0 8px 32px 0 rgba(124, 58, 237, 0.3);
             
-            /* التدرجات */
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            /* ألوان الوضع النيون */
+            --neon-bg: #000005;
+            --neon-glow-primary: 0 0 10px #7c3aed, 0 0 20px #7c3aed, 0 0 40px #7c3aed;
+            --neon-glow-secondary: 0 0 10px #06b6d4, 0 0 20px #06b6d4, 0 0 40px #06b6d4;
+            
+            /* التدرجات - Solo Leveling Style */
+            --gradient-system: linear-gradient(135deg, #1e1b4b 0%, #312e81 30%, #1e1b4b 70%, #0f172a 100%);
+            --gradient-glow: linear-gradient(135deg, rgba(124, 58, 237, 0.3) 0%, rgba(6, 182, 212, 0.3) 50%, rgba(124, 58, 237, 0.3) 100%);
             --gradient-instagram: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
             --gradient-tiktok: linear-gradient(45deg, #00f2ea, #ff0050);
+            --gradient-whatsapp: linear-gradient(135deg, #25D366, #128C7E);
             
             /* الخطوط */
             --font-primary: 'Cairo', 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
             --font-mono: 'Fira Code', monospace;
+            --font-system: 'Courier New', monospace;
             
             /* الأبعاد والحدود */
             --border-radius-sm: 8px;
             --border-radius-md: 16px;
             --border-radius-lg: 24px;
             --border-radius-full: 9999px;
+            --border-system: 2px solid rgba(139, 92, 246, 0.5);
             
             /* التحركات والانتقالات */
             --transition-fast: 150ms ease;
             --transition-normal: 300ms ease;
             --transition-slow: 500ms ease;
-            --transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
             
-            /* الظلال المتحركة */
-            --glow-primary: 0 0 20px rgba(99, 102, 241, 0.5);
-            --glow-secondary: 0 0 20px rgba(236, 72, 153, 0.5);
-            --glow-accent: 0 0 20px rgba(20, 184, 166, 0.5);
+            /* الظلال المتوهجة */
+            --glow-primary: 0 0 20px rgba(124, 58, 237, 0.6), 0 0 40px rgba(124, 58, 237, 0.3);
+            --glow-secondary: 0 0 20px rgba(6, 182, 212, 0.6), 0 0 40px rgba(6, 182, 212, 0.3);
+            --glow-accent: 0 0 20px rgba(244, 63, 94, 0.6), 0 0 40px rgba(244, 63, 94, 0.3);
+            --glow-system: 0 0 15px rgba(0, 212, 255, 0.5), inset 0 0 15px rgba(0, 212, 255, 0.1);
+        }
+
+        /* ============================================
+           🌌 خلفية Solo Leveling الرئيسية
+           ============================================ */
+        .solo-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+            background: 
+                radial-gradient(ellipse at 20% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(15, 23, 42, 0.9) 0%, rgba(10, 10, 15, 0.95) 100%),
+                var(--gradient-system);
+            overflow: hidden;
+        }
+
+        /* تأثير الجسيمات العائمة */
+        .solo-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(139, 92, 246, 0.6);
+            border-radius: var(--border-radius-full);
+            animation: float-particle linear infinite;
+            box-shadow: 0 0 10px rgba(139, 92, 246, 0.8);
+        }
+
+        .particle:nth-child(odd) {
+            background: rgba(6, 182, 212, 0.6);
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.8);
+        }
+
+        @keyframes float-particle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* تأثير نظام Solo Leveling */
+        .system-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 1px,
+                    rgba(139, 92, 246, 0.03) 1px,
+                    rgba(139, 92, 246, 0.03) 2px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 1px,
+                    rgba(6, 182, 212, 0.03) 1px,
+                    rgba(6, 182, 212, 0.03) 2px
+                );
+            pointer-events: none;
+            animation: grid-move 20s linear infinite;
+        }
+
+        @keyframes grid-move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* تأثير الوميض النظامي */
+        .system-flicker {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(10, 10, 15, 0.8) 100%);
+            pointer-events: none;
+            animation: flicker 8s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            92% { opacity: 1; }
+            93% { opacity: 0.95; }
+            94% { opacity: 1; }
+            95% { opacity: 0.98; }
+        }
+
+        /* شعار النظام العائم */
+        .system-logo {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            padding: 0.8rem 1.5rem;
+            background: var(--sl-card-bg);
+            border: var(--border-system);
+            border-radius: var(--border-radius-md);
+            color: var(--sl-system-blue);
+            font-family: var(--font-system);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--glow-system);
+            animation: pulse-system 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-system {
+            0%, 100% { box-shadow: var(--glow-system); }
+            50% { box-shadow: 0 0 25px rgba(0, 212, 255, 0.8), inset 0 0 25px rgba(0, 212, 255, 0.2); }
+        }
+
+        .system-logo i {
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         /* ============================================
@@ -112,57 +272,12 @@
         body {
             font-family: var(--font-primary);
             line-height: 1.7;
-            color: var(--text-light);
-            background: var(--bg-light);
+            color: var(--text-dark);
+            background: transparent;
             min-height: 100vh;
             overflow-x: hidden;
-            transition: background var(--transition-normal), color var(--transition-normal);
-        }
-
-        body.dark-mode {
-            color: var(--text-dark);
-            background: var(--bg-dark);
-        }
-
-        body.glass-mode {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: var(--text-dark);
-        }
-
-        body.neon-mode {
-            background: #000;
-            color: #fff;
-        }
-
-        /* ============================================
-           🎭 أنماط الوضع الليلي والزجاجي والنيون
-           ============================================ */
-        body.dark-mode .card,
-        body.dark-mode .social-card,
-        body.dark-mode .contact-form {
-            background: var(--bg-card-dark);
-            border-color: var(--border-dark);
-            box-shadow: var(--shadow-dark);
-        }
-
-        body.glass-mode .card,
-        body.glass-mode .social-card,
-        body.glass-mode .contact-form {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--glass-shadow);
-        }
-
-        body.neon-mode .card {
-            background: rgba(20, 20, 40, 0.9);
-            border: 2px solid var(--primary-color);
-            box-shadow: var(--glow-primary);
-        }
-
-        body.neon-mode .social-link:hover {
-            box-shadow: var(--glow-secondary);
+            transition: color var(--transition-normal);
+            position: relative;
         }
 
         /* ============================================
@@ -173,6 +288,7 @@
             margin: 0 auto;
             padding: 2rem;
             position: relative;
+            z-index: 10;
         }
 
         .page {
@@ -196,15 +312,17 @@
         }
 
         .card {
-            background: var(--bg-card-light);
+            background: var(--sl-card-bg);
             border-radius: var(--border-radius-lg);
             padding: 2.5rem;
             margin-bottom: 2rem;
-            box-shadow: var(--shadow-light);
-            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-dark);
+            border: var(--border-system);
             transition: all var(--transition-normal);
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .card::before {
@@ -213,8 +331,8 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: var(--gradient-1);
+            height: 3px;
+            background: var(--gradient-glow);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform var(--transition-normal);
@@ -226,11 +344,8 @@
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-hover-light);
-        }
-
-        body.dark-mode .card:hover {
-            box-shadow: var(--shadow-hover-dark);
+            box-shadow: var(--shadow-hover-dark), var(--glow-primary);
+            border-color: var(--sl-primary-light);
         }
 
         /* ============================================
@@ -248,13 +363,14 @@
             margin: 0 auto 2rem;
             border-radius: var(--border-radius-full);
             padding: 4px;
-            background: var(--gradient-1);
+            background: var(--gradient-glow);
             animation: pulse 2s infinite;
+            box-shadow: var(--glow-primary);
         }
 
         @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
-            50% { box-shadow: 0 0 0 15px rgba(99, 102, 241, 0); }
+            0%, 100% { box-shadow: var(--glow-primary); }
+            50% { box-shadow: 0 0 30px rgba(124, 58, 237, 0.8), 0 0 60px rgba(124, 58, 237, 0.4); }
         }
 
         .profile-img {
@@ -262,7 +378,7 @@
             height: 100%;
             border-radius: var(--border-radius-full);
             object-fit: cover;
-            border: 4px solid var(--bg-card-light);
+            border: 4px solid var(--sl-card-bg);
             transition: transform var(--transition-normal);
         }
 
@@ -274,38 +390,27 @@
             font-size: 2.2rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
-            background: var(--gradient-1);
+            background: var(--gradient-glow);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: -0.5px;
-        }
-
-        body.dark-mode .profile-name,
-        body.glass-mode .profile-name {
-            background: var(--gradient-3);
-            -webkit-background-clip: text;
+            text-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
         }
 
         .profile-title {
             font-size: 1.2rem;
-            color: var(--text-muted-light);
+            color: var(--sl-system-blue);
             margin-bottom: 1rem;
             font-weight: 500;
-        }
-
-        body.dark-mode .profile-title {
-            color: var(--text-muted-dark);
+            font-family: var(--font-system);
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
         }
 
         .profile-bio {
             max-width: 600px;
             margin: 0 auto 2rem;
             font-size: 1.1rem;
-            color: var(--text-muted-light);
-        }
-
-        body.dark-mode .profile-bio {
             color: var(--text-muted-dark);
         }
 
@@ -334,7 +439,8 @@
             transition: all var(--transition-normal);
             position: relative;
             overflow: hidden;
-            box-shadow: var(--shadow-light);
+            box-shadow: var(--shadow-dark);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .social-link::before {
@@ -344,7 +450,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
             transition: left 0.5s;
         }
 
@@ -354,7 +460,7 @@
 
         .social-link:hover {
             transform: translateY(-3px);
-            box-shadow: var(--shadow-hover-light);
+            box-shadow: var(--shadow-hover-dark);
         }
 
         .social-link i {
@@ -362,23 +468,26 @@
             min-width: 30px;
         }
 
-        /* ألوان منصات التواصل */
+        /* ألوان منصات التواصل - Solo Leveling Style */
         .whatsapp-link { 
-            background: linear-gradient(135deg, #25D366, #128C7E); 
+            background: var(--gradient-whatsapp); 
+            border: none;
         }
         .whatsapp-link:hover { 
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); 
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4), var(--glow-secondary); 
         }
 
         .tiktok-link { 
             background: var(--gradient-tiktok); 
+            border: none;
         }
         .tiktok-link:hover { 
-            box-shadow: 0 10px 30px rgba(0, 242, 234, 0.4); 
+            box-shadow: 0 10px 30px rgba(0, 242, 234, 0.4), var(--glow-secondary); 
         }
 
         .facebook-link { 
             background: linear-gradient(135deg, #1877F2, #42b72a); 
+            border: none;
         }
         .facebook-link:hover { 
             box-shadow: 0 10px 30px rgba(24, 119, 242, 0.4); 
@@ -386,38 +495,31 @@
 
         .instagram-link { 
             background: var(--gradient-instagram); 
+            border: none;
         }
         .instagram-link:hover { 
-            box-shadow: 0 10px 30px rgba(220, 39, 67, 0.4); 
+            box-shadow: 0 10px 30px rgba(220, 39, 67, 0.4), var(--glow-accent); 
         }
 
         .telegram-link { 
             background: linear-gradient(135deg, #0088cc, #00aadd); 
-        }
-        .telegram-link:hover { 
-            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.4); 
+            border: none;
         }
 
         .youtube-link { 
             background: linear-gradient(135deg, #FF0000, #cc0000); 
-        }
-        .youtube-link:hover { 
-            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4); 
+            border: none;
         }
 
         .snapchat-link { 
             background: linear-gradient(135deg, #FFFC00, #ffcc00); 
             color: #000;
-        }
-        .snapchat-link:hover { 
-            box-shadow: 0 10px 30px rgba(255, 252, 0, 0.4); 
+            border: none;
         }
 
         .twitter-link { 
             background: linear-gradient(135deg, #1DA1F2, #0d8bd9); 
-        }
-        .twitter-link:hover { 
-            box-shadow: 0 10px 30px rgba(29, 161, 242, 0.4); 
+            border: none;
         }
 
         /* ============================================
@@ -431,16 +533,17 @@
         }
 
         .social-card {
-            background: var(--bg-card-light);
+            background: var(--sl-card-bg);
             border-radius: var(--border-radius-md);
             padding: 1.8rem;
             text-align: center;
             text-decoration: none;
-            color: inherit;
+            color: var(--text-dark);
             transition: all var(--transition-normal);
-            border: 1px solid var(--border-light);
+            border: var(--border-system);
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(10px);
         }
 
         .social-card::after {
@@ -450,7 +553,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: var(--gradient-1);
+            background: var(--gradient-glow);
             transform: scaleX(0);
             transition: transform var(--transition-normal);
         }
@@ -461,16 +564,8 @@
 
         .social-card:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow-hover-light);
-        }
-
-        body.dark-mode .social-card {
-            background: var(--bg-card-dark);
-            border-color: var(--border-dark);
-        }
-
-        body.dark-mode .social-card:hover {
-            box-shadow: var(--shadow-hover-dark);
+            box-shadow: var(--shadow-hover-dark), var(--glow-primary);
+            border-color: var(--sl-primary-light);
         }
 
         .social-card-icon {
@@ -484,19 +579,16 @@
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             display: block;
+            color: var(--sl-system-blue);
         }
 
         .social-card-desc {
             font-size: 0.95rem;
-            color: var(--text-muted-light);
-        }
-
-        body.dark-mode .social-card-desc {
             color: var(--text-muted-dark);
         }
 
         /* ============================================
-           📧 نموذج التواصل
+           📧 نموذج التواصل - مُصلح
            ============================================ */
         .contact-form {
             max-width: 600px;
@@ -513,10 +605,6 @@
             margin-bottom: 0.6rem;
             font-weight: 600;
             font-size: 1.05rem;
-            color: var(--text-light);
-        }
-
-        body.dark-mode .form-label {
             color: var(--text-dark);
         }
 
@@ -525,26 +613,27 @@
             width: 100%;
             padding: 1rem 1.3rem;
             border-radius: var(--border-radius-md);
-            border: 2px solid var(--border-light);
-            background: var(--bg-card-light);
-            color: var(--text-light);
+            border: 2px solid var(--border-dark);
+            background: rgba(30, 41, 59, 0.5);
+            color: var(--text-dark);
             font-size: 1rem;
             font-family: var(--font-primary);
             transition: all var(--transition-fast);
-        }
-
-        body.dark-mode .form-input,
-        body.dark-mode .form-textarea {
-            background: var(--bg-card-dark);
-            border-color: var(--border-dark);
-            color: var(--text-dark);
+            backdrop-filter: blur(5px);
         }
 
         .form-input:focus,
         .form-textarea:focus {
             outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+            border-color: var(--sl-primary);
+            box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.2), var(--glow-primary);
+            background: rgba(30, 41, 59, 0.8);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--text-muted-dark);
+            opacity: 0.7;
         }
 
         .form-textarea {
@@ -556,9 +645,9 @@
         .submit-btn {
             width: 100%;
             padding: 1.2rem 2rem;
-            background: var(--gradient-1);
+            background: var(--gradient-glow);
             color: white;
-            border: none;
+            border: var(--border-system);
             border-radius: var(--border-radius-md);
             font-size: 1.1rem;
             font-weight: 600;
@@ -567,6 +656,7 @@
             position: relative;
             overflow: hidden;
             font-family: var(--font-primary);
+            box-shadow: var(--glow-primary);
         }
 
         .submit-btn::before {
@@ -586,7 +676,8 @@
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 10px 40px rgba(124, 58, 237, 0.6), var(--glow-primary);
+            border-color: var(--sl-primary-light);
         }
 
         .submit-btn:active {
@@ -597,6 +688,40 @@
             opacity: 0.7;
             cursor: not-allowed;
             transform: none;
+        }
+
+        /* رسالة النجاح */
+        .success-message {
+            display: none;
+            padding: 1rem;
+            background: rgba(20, 184, 166, 0.15);
+            border: 1px solid var(--sl-secondary);
+            border-radius: var(--border-radius-md);
+            color: var(--sl-secondary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            animation: fadeInUp 0.4s ease;
+            box-shadow: var(--glow-secondary);
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .error-message {
+            display: none;
+            padding: 1rem;
+            background: rgba(244, 63, 94, 0.15);
+            border: 1px solid var(--sl-accent);
+            border-radius: var(--border-radius-md);
+            color: var(--sl-accent);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        .error-message.show {
+            display: block;
         }
 
         /* ============================================
@@ -621,23 +746,19 @@
             justify-content: center;
             cursor: pointer;
             font-size: 1.4rem;
-            background: var(--bg-card-light);
-            color: var(--text-light);
-            border: 2px solid var(--border-light);
-            box-shadow: var(--shadow-light);
+            background: var(--sl-card-bg);
+            color: var(--text-dark);
+            border: var(--border-system);
+            box-shadow: var(--shadow-dark), var(--glow-primary);
             transition: all var(--transition-normal);
             position: relative;
-        }
-
-        body.dark-mode .control-btn {
-            background: var(--bg-card-dark);
-            color: var(--text-dark);
-            border-color: var(--border-dark);
+            backdrop-filter: blur(10px);
         }
 
         .control-btn:hover {
             transform: scale(1.1);
-            box-shadow: var(--shadow-hover-light);
+            box-shadow: var(--shadow-hover-dark), var(--glow-primary);
+            border-color: var(--sl-primary-light);
         }
 
         .control-btn i {
@@ -652,32 +773,21 @@
             position: absolute;
             bottom: 70px;
             left: 0;
-            background: var(--bg-card-light);
+            background: var(--sl-card-bg);
             border-radius: var(--border-radius-lg);
             padding: 1.2rem;
             display: none;
             flex-wrap: wrap;
             width: 240px;
-            box-shadow: var(--shadow-hover-light);
-            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-hover-dark), var(--glow-primary);
+            border: var(--border-system);
             animation: slideUp 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
         @keyframes slideUp {
-            from { 
-                opacity: 0; 
-                transform: translateY(20px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
-        }
-
-        body.dark-mode .control-panel {
-            background: var(--bg-card-dark);
-            border-color: var(--border-dark);
-            box-shadow: var(--shadow-hover-dark);
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .control-panel.show {
@@ -703,9 +813,9 @@
         }
 
         .theme-option.active {
-            border-color: var(--primary-color);
+            border-color: var(--sl-primary);
             transform: scale(1.1);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.5), var(--glow-primary);
         }
 
         .theme-option::after {
@@ -716,21 +826,26 @@
             font-weight: bold;
             opacity: 0;
             transition: opacity var(--transition-fast);
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
         }
 
         .theme-option.active::after {
             opacity: 1;
         }
 
-        .theme-light-opt { background: var(--bg-light); }
+        .theme-sl-opt { 
+            background: var(--gradient-system); 
+            border: 2px solid var(--sl-primary);
+        }
         .theme-dark-opt { background: var(--bg-dark); }
         .theme-glass-opt { 
-            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)); 
-            border: 1px solid rgba(255,255,255,0.2);
+            background: var(--glass-bg); 
+            border: 1px solid var(--glass-border);
         }
         .theme-neon-opt { 
-            background: #000; 
-            box-shadow: 0 0 15px var(--primary-color);
+            background: var(--neon-bg); 
+            box-shadow: var(--neon-glow-primary);
+            border: 2px solid var(--sl-primary);
         }
 
         /* القائمة الجانبية */
@@ -745,31 +860,20 @@
             position: absolute;
             top: 70px;
             left: 0;
-            background: var(--bg-card-light);
+            background: var(--sl-card-bg);
             border-radius: var(--border-radius-lg);
             padding: 0.8rem;
             display: none;
             min-width: 220px;
-            box-shadow: var(--shadow-hover-light);
-            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-hover-dark), var(--glow-primary);
+            border: var(--border-system);
             animation: slideDown 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
         @keyframes slideDown {
-            from { 
-                opacity: 0; 
-                transform: translateY(-20px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
-        }
-
-        body.dark-mode .menu-panel {
-            background: var(--bg-card-dark);
-            border-color: var(--border-dark);
-            box-shadow: var(--shadow-hover-dark);
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .menu-panel.show {
@@ -782,7 +886,7 @@
             gap: 0.8rem;
             padding: 0.9rem 1.2rem;
             text-decoration: none;
-            color: inherit;
+            color: var(--text-dark);
             border-radius: var(--border-radius-md);
             margin-bottom: 4px;
             font-weight: 500;
@@ -791,22 +895,25 @@
         }
 
         .menu-item:hover {
-            background: rgba(99, 102, 241, 0.1);
+            background: rgba(124, 58, 237, 0.2);
             transform: translateX(5px);
-        }
-
-        body.dark-mode .menu-item:hover {
-            background: rgba(99, 102, 241, 0.2);
+            color: var(--sl-primary-light);
         }
 
         .menu-item i {
             font-size: 1.2rem;
             min-width: 24px;
             text-align: center;
+            color: var(--sl-system-blue);
         }
 
         .menu-item.active {
-            background: var(--gradient-1);
+            background: var(--gradient-glow);
+            color: white;
+            border: var(--border-system);
+        }
+
+        .menu-item.active i {
             color: white;
         }
 
@@ -817,12 +924,10 @@
             text-align: center;
             padding: 2.5rem 2rem 3rem;
             margin-top: 2rem;
-            color: var(--text-muted-light);
-            font-size: 0.95rem;
-        }
-
-        body.dark-mode footer {
             color: var(--text-muted-dark);
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 10;
         }
 
         footer .copyright {
@@ -830,9 +935,10 @@
         }
 
         footer .heart {
-            color: #ef4444;
+            color: var(--sl-accent);
             animation: heartbeat 1.5s ease infinite;
             display: inline-block;
+            text-shadow: 0 0 10px rgba(244, 63, 94, 0.5);
         }
 
         @keyframes heartbeat {
@@ -858,10 +964,12 @@
             text-decoration: none;
             transition: all var(--transition-fast);
             font-size: 1.1rem;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .social-footer a:hover {
             transform: translateY(-3px);
+            box-shadow: var(--glow-primary);
         }
 
         /* ============================================
@@ -877,17 +985,13 @@
         }
 
         .glow-text {
-            text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+            text-shadow: 0 0 20px rgba(124, 58, 237, 0.7), 0 0 40px rgba(124, 58, 237, 0.3);
         }
 
-        .typing-effect::after {
-            content: '|';
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
+        .system-text {
+            font-family: var(--font-system);
+            color: var(--sl-system-blue);
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
         }
 
         /* شريط التحميل */
@@ -897,141 +1001,77 @@
             left: 0;
             width: 0;
             height: 3px;
-            background: var(--gradient-1);
+            background: var(--gradient-glow);
             z-index: 9999;
             transition: width 0.3s ease;
+            box-shadow: var(--glow-primary);
         }
 
         .loading-bar.active {
             width: 100%;
         }
 
+        /* مؤشر المستوى - Solo Leveling Style */
+        .level-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.2rem;
+            background: rgba(124, 58, 237, 0.2);
+            border: 1px solid var(--sl-primary);
+            border-radius: var(--border-radius-full);
+            color: var(--sl-primary-light);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--glow-primary);
+            font-family: var(--font-system);
+        }
+
+        .level-badge i {
+            animation: spin 3s linear infinite;
+        }
+
         /* ============================================
            📱 التصميم المتجاوب
            ============================================ */
         @media (max-width: 768px) {
-            :root {
-                font-size: 14px;
-            }
+            :root { font-size: 14px; }
             
-            .container {
-                padding: 1.2rem;
-            }
+            .container { padding: 1.2rem; }
+            .card { padding: 1.8rem; border-radius: var(--border-radius-md); }
             
-            .card {
-                padding: 1.8rem;
-                border-radius: var(--border-radius-md);
-            }
+            .profile-img-container { width: 180px; height: 180px; }
+            .profile-name { font-size: 1.8rem; }
+            .profile-title { font-size: 1.1rem; }
             
-            .profile-img-container {
-                width: 180px;
-                height: 180px;
-            }
+            .social-link { padding: 1rem 1.5rem; font-size: 1rem; }
+            .social-link i { font-size: 1.5rem; }
+            .social-grid { grid-template-columns: 1fr; }
             
-            .profile-name {
-                font-size: 1.8rem;
-            }
+            .controls-container { bottom: 15px; left: 15px; }
+            .control-btn { width: 50px; height: 50px; }
+            .control-panel { width: 200px; bottom: 65px; }
             
-            .profile-title {
-                font-size: 1.1rem;
-            }
+            .side-menu { top: 15px; left: 15px; }
+            .menu-panel { min-width: 200px; top: 65px; }
             
-            .social-link {
-                padding: 1rem 1.5rem;
-                font-size: 1rem;
-            }
-            
-            .social-link i {
-                font-size: 1.5rem;
-            }
-            
-            .social-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .controls-container {
+            .system-logo {
                 bottom: 15px;
-                left: 15px;
+                right: 15px;
+                font-size: 0.75rem;
+                padding: 0.6rem 1rem;
             }
             
-            .control-btn {
-                width: 50px;
-                height: 50px;
-            }
-            
-            .control-panel {
-                width: 200px;
-                bottom: 65px;
-            }
-            
-            .side-menu {
-                top: 15px;
-                left: 15px;
-            }
-            
-            .menu-panel {
-                min-width: 200px;
-                top: 65px;
-            }
-            
-            footer {
-                padding: 2rem 1.5rem;
-            }
+            footer { padding: 2rem 1.5rem; }
         }
 
         @media (max-width: 480px) {
-            .profile-img-container {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .profile-name {
-                font-size: 1.5rem;
-            }
-            
-            .card {
-                padding: 1.5rem;
-            }
-            
-            .form-input,
-            .form-textarea {
-                padding: 0.9rem 1.1rem;
-            }
-            
-            .submit-btn {
-                padding: 1rem 1.5rem;
-                font-size: 1rem;
-            }
-        }
-
-        /* ============================================
-           🎨 تحسينات إضافية للوضع الليلي
-           ============================================ */
-        @media (prefers-color-scheme: dark) {
-            body:not(.light-mode) {
-                color: var(--text-dark);
-                background: var(--bg-dark);
-            }
-            
-            body:not(.light-mode) .card,
-            body:not(.light-mode) .social-card {
-                background: var(--bg-card-dark);
-                border-color: var(--border-dark);
-                box-shadow: var(--shadow-dark);
-            }
-            
-            body:not(.light-mode) .form-input,
-            body:not(.light-mode) .form-textarea {
-                background: var(--bg-card-dark);
-                border-color: var(--border-dark);
-                color: var(--text-dark);
-            }
-            
-            body:not(.light-mode) .profile-title,
-            body:not(.light-mode) .profile-bio,
-            body:not(.light-mode) .social-card-desc {
-                color: var(--text-muted-dark);
-            }
+            .profile-img-container { width: 150px; height: 150px; }
+            .profile-name { font-size: 1.5rem; }
+            .card { padding: 1.5rem; }
+            .form-input, .form-textarea { padding: 0.9rem 1.1rem; }
+            .submit-btn { padding: 1rem 1.5rem; font-size: 1rem; }
         }
 
         /* ============================================
@@ -1043,11 +1083,7 @@
 
         .hover-lift:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-hover-light);
-        }
-
-        body.dark-mode .hover-lift:hover {
-            box-shadow: var(--shadow-hover-dark);
+            box-shadow: var(--shadow-hover-dark), var(--glow-primary);
         }
 
         .hover-glow {
@@ -1056,52 +1092,6 @@
 
         .hover-glow:hover {
             box-shadow: var(--glow-primary);
-        }
-
-        /* ============================================
-           🎯 مؤشرات الحالة والتحميل
-           ============================================ */
-        .status-indicator {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 1rem;
-            background: rgba(20, 184, 166, 0.15);
-            color: var(--accent-color);
-            border-radius: var(--border-radius-full);
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: var(--border-radius-full);
-            background: var(--accent-color);
-            animation: pulse-dot 2s infinite;
-        }
-
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(0.9); }
-        }
-
-        /* رسالة النجاح */
-        .success-message {
-            display: none;
-            padding: 1rem;
-            background: rgba(20, 184, 166, 0.15);
-            border: 1px solid var(--accent-color);
-            border-radius: var(--border-radius-md);
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
-            text-align: center;
-            animation: fadeInUp 0.4s ease;
-        }
-
-        .success-message.show {
-            display: block;
         }
 
         /* ============================================
@@ -1123,10 +1113,46 @@
         .stagger-3 { transition-delay: 0.3s; }
         .stagger-4 { transition-delay: 0.4s; }
         .stagger-5 { transition-delay: 0.5s; }
+
+        /* تأثير الظل المتحرك للبطاقات */
+        .card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+            pointer-events: none;
+        }
+
+        .card:hover::after {
+            opacity: 1;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
     </style>
 </head>
 
-<body class="dark-mode">
+<body>
+    <!-- خلفية Solo Leveling -->
+    <div class="solo-bg"></div>
+    <div class="solo-particles" id="particles"></div>
+    <div class="system-overlay"></div>
+    <div class="system-flicker"></div>
+    
+    <!-- شعار النظام العائم -->
+    <div class="system-logo">
+        <i class="fas fa-circle-notch"></i>
+        <span>SYSTEM ONLINE</span>
+    </div>
+
     <!-- شريط التحميل -->
     <div class="loading-bar" id="loadingBar"></div>
 
@@ -1136,10 +1162,10 @@
             <i class="fas fa-palette"></i>
         </div>
         <div class="control-panel" id="themePanel">
-            <div class="theme-option theme-dark-opt active" data-theme="dark" title="الوضع الداكن"></div>
-            <div class="theme-option theme-light-opt" data-theme="light" title="الوضع الفاتح"></div>
-            <div class="theme-option theme-glass-opt" data-theme="glass" title="الوضع الزجاجي"></div>
-            <div class="theme-option theme-neon-opt" data-theme="neon" title="الوضع النيون"></div>
+            <div class="theme-option theme-sl-opt active" data-theme="solo" title="Solo Leveling ⚔️"></div>
+            <div class="theme-option theme-dark-opt" data-theme="dark" title="الوضع الداكن 🌙"></div>
+            <div class="theme-option theme-glass-opt" data-theme="glass" title="الوضع الزجاجي 🔮"></div>
+            <div class="theme-option theme-neon-opt" data-theme="neon" title="الوضع النيون 💜"></div>
         </div>
     </div>
 
@@ -1179,17 +1205,20 @@
                     </div>
                     
                     <h1 class="profile-name glow-text">𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</h1>
-                    <p class="profile-title">مصمم ومطور ويب محترف</p>
+                    <p class="profile-title system-text">[ PLAYER ] Web Designer & Developer</p>
                     <p class="profile-bio">
-                        أهلاً وسهلاً بك في موقعي الشخصي 🎨✨
+                        <span class="system-text">»</span> أهلاً بك في نظامي الشخصي 🎮✨
+                        <br><br>
+                        <span class="system-text">[ STATUS ]</span> متاح للتحديات والمشاريع الجديدة
                         <br>
-                        هنا ستجد جميع روابط التواصل الخاصة بي، 
-                        لا تتردد في التواصل معي لأي استفسار أو تعاون!
+                        <span class="system-text">[ CLASS ]</span> مصمم ومطور ويب محترف
+                        <br>
+                        <span class="system-text">[ QUEST ]</span> تحويل أفكارك إلى واقع رقمي مذهل!
                     </p>
                     
-                    <div class="status-indicator">
-                        <span class="status-dot"></span>
-                        <span>متاح للتواصل والعمل الحر</span>
+                    <div class="level-badge">
+                        <i class="fas fa-star"></i>
+                        <span>LVL. ∞ | RANK: SHADOW MONARCH</span>
                     </div>
                 </section>
                 
@@ -1209,12 +1238,12 @@
         <!-- ================= صفحة مواقع التواصل ================= -->
         <div id="social" class="page">
             <div class="card animate-on-scroll">
-                <h2 style="text-align: center; margin-bottom: 1rem; font-size: 1.8rem;">
+                <h2 style="text-align: center; margin-bottom: 1rem; font-size: 1.8rem;" class="glow-text">
                     <i class="fas fa-share-alt" style="margin-left: 0.5rem;"></i>
-                    مواقع التواصل الاجتماعي
+                    <span class="system-text">[ SOCIAL LINKS ]</span>
                 </h2>
-                <p style="text-align: center; color: var(--text-muted-light); margin-bottom: 2rem;">
-                    اختر المنصة التي تفضلها للتواصل معي
+                <p style="text-align: center; color: var(--text-muted-dark); margin-bottom: 2rem;">
+                    اختر المنصة التي تفضلها للتواصل معي <span class="system-text">⚔️</span>
                 </p>
                 
                 <div class="social-grid">
@@ -1265,40 +1294,48 @@
             </div>
         </div>
 
-        <!-- ================= صفحة التواصل ================= -->
+        <!-- ================= صفحة التواصل - مُصلحة ================= -->
         <div id="contact" class="page">
             <div class="card animate-on-scroll">
-                <h2 style="text-align: center; margin-bottom: 1rem; font-size: 1.8rem;">
+                <h2 style="text-align: center; margin-bottom: 1rem; font-size: 1.8rem;" class="glow-text">
                     <i class="fas fa-envelope" style="margin-left: 0.5rem;"></i>
-                    أرسل لي رسالة
+                    <span class="system-text">[ SEND MESSAGE ]</span>
                 </h2>
-                <p style="text-align: center; color: var(--text-muted-light); margin-bottom: 2rem;">
-                    يسعدني جداً تلقي رسالتك، سأرد عليك في أقرب وقت ممكن ✨
+                <p style="text-align: center; color: var(--text-muted-dark); margin-bottom: 2rem;">
+                    <span class="system-text">»</span> يسعدني تلقي رسالتك، سأرد عليك في أقرب وقت <span class="system-text">✨</span>
                 </p>
                 
                 <div class="success-message" id="successMessage">
                     <i class="fas fa-check-circle" style="margin-left: 0.5rem;"></i>
-                    تم إرسال رسالتك بنجاح! شكراً لتواصلك معي 🎉
+                    <span class="system-text">[ SUCCESS ]</span> تم إرسال رسالتك بنجاح! 🎉
+                </div>
+                
+                <div class="error-message" id="errorMessage">
+                    <i class="fas fa-exclamation-circle" style="margin-left: 0.5rem;"></i>
+                    <span class="system-text">[ ERROR ]</span> حدث خطأ، يرجى المحاولة لاحقاً
                 </div>
                 
                 <form id="contactForm" 
                       class="contact-form" 
-                      action="https://formsubmit.co/gerges12gerges34@gmail.com" 
+                      action="https://formsubmit.co/ajax/gerges12gerges34@gmail.com" 
                       method="POST">
+                    <!-- إعدادات FormSubmit الصحيحة -->
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_subject" value="📩 رسالة جديدة من الموقع الشخصي">
+                    <input type="hidden" name="_subject" value="🎮 رسالة جديدة من موقع جرجس أشرف">
+                    <input type="hidden" name="_autoresponse" value="شكراً لتواصلك معي! تم استلام رسالتك وسأرد عليك قريباً. ✨">
+                    <input type="hidden" name="_next" value="">
                     
                     <div class="form-group">
                         <label for="name" class="form-label">
                             <i class="fas fa-user" style="margin-left: 0.5rem;"></i>
-                            الاسم الكامل *
+                            <span class="system-text">[ NAME ]</span> *
                         </label>
                         <input type="text" 
                                id="name" 
                                name="name" 
                                class="form-input" 
-                               placeholder="اكتب اسمك هنا..." 
+                               placeholder="أدخل اسمك هنا..." 
                                required
                                autocomplete="name">
                     </div>
@@ -1306,7 +1343,7 @@
                     <div class="form-group">
                         <label for="email" class="form-label">
                             <i class="fas fa-envelope" style="margin-left: 0.5rem;"></i>
-                            البريد الإلكتروني *
+                            <span class="system-text">[ EMAIL ]</span> *
                         </label>
                         <input type="email" 
                                id="email" 
@@ -1320,7 +1357,7 @@
                     <div class="form-group">
                         <label for="message" class="form-label">
                             <i class="fas fa-comment-alt" style="margin-left: 0.5rem;"></i>
-                            نص الرسالة *
+                            <span class="system-text">[ MESSAGE ]</span> *
                         </label>
                         <textarea id="message" 
                                   name="message" 
@@ -1331,7 +1368,7 @@
                     
                     <button type="submit" class="submit-btn hover-glow">
                         <i class="fas fa-paper-plane" style="margin-left: 0.5rem;"></i>
-                        إرسال الرسالة
+                        <span class="system-text">[ SEND ]</span> إرسال الرسالة
                     </button>
                 </form>
             </div>
@@ -1345,7 +1382,10 @@
             جميع الحقوق محفوظة &copy; <span id="currentYear">2025</span> 
             <span class="profile-name" style="font-size: 1rem; display: inline;">𝕲𝖊𝖔𝖗𝖌𝖊𝖘 𝕬𝖘𝖍𝖗𝖆𝖋 ⃝ 🇪🇬</span>
         </p>
-        <p>صُنع بـ <span class="heart">❤</span> وشغف في مصر 🇪🇬</p>
+        <p>
+            <span class="system-text">»</span> صُنع بـ <span class="heart">❤</span> وشغف في مصر 🇪🇬
+            <span class="system-text">|</span> SYSTEM v2.0 ⚡
+        </p>
         
         <div class="social-footer">
             <a href="https://tiktok.com/@1devil2slayer" class="tiktok-link" style="padding: 0;" target="_blank">
@@ -1366,51 +1406,67 @@
     <script>
         /**
          * ============================================
-         * 🚀 سكربت الموقع الرئيسي - تصميم احترافي
+         * 🎮 Solo Leveling System - الموقع الرسمي
          * ============================================
-         * هذا السكربت يحتوي على جميع الوظائف التفاعلية
-         * للموقع مع تحسينات الأداء والتجربة
+         * إصلاح مشكلة البريد + تأثيرات الأنمي الفاخرة
          */
 
-        // ============================================
-        // 📦 تهيئة المتغيرات العامة
-        // ============================================
         document.addEventListener('DOMContentLoaded', function() {
-            // إظهار شريط التحميل
+            // ============================================
+            // 📊 شريط التحميل
+            // ============================================
             const loadingBar = document.getElementById('loadingBar');
             loadingBar.classList.add('active');
             
-            // إخفاء شريط التحميل بعد تحميل الصفحة
             window.addEventListener('load', function() {
                 setTimeout(() => {
                     loadingBar.classList.remove('active');
-                }, 500);
+                    initParticles();
+                }, 800);
             });
 
-            // تحديث سنة الحقوق تلقائياً
+            // تحديث السنة
             document.getElementById('currentYear').textContent = new Date().getFullYear();
 
             // ============================================
-            // 🎨 نظام تغيير الثيمات
+            // ✨ إنشاء الجسيمات العائمة (Particles)
+            // ============================================
+            function initParticles() {
+                const particlesContainer = document.getElementById('particles');
+                const particleCount = 30;
+                
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    
+                    // مواقع وحركات عشوائية
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.animationDuration = (Math.random() * 20 + 15) + 's';
+                    particle.style.animationDelay = (Math.random() * 10) + 's';
+                    particle.style.width = (Math.random() * 3 + 2) + 'px';
+                    particle.style.height = particle.style.width;
+                    
+                    particlesContainer.appendChild(particle);
+                }
+            }
+
+            // ============================================
+            // 🎨 نظام الثيمات
             // ============================================
             const themeBtn = document.getElementById('themeBtn');
             const themePanel = document.getElementById('themePanel');
             const themeOptions = document.querySelectorAll('.theme-option');
             const body = document.body;
 
-            // تحميل الثيم المحفوظ من التخزين المحلي
-            const savedTheme = localStorage.getItem('siteTheme') || 'dark';
+            const savedTheme = localStorage.getItem('siteTheme') || 'solo';
             applyTheme(savedTheme);
             updateActiveTheme(savedTheme);
 
-            // فتح/إغلاق لوحة الثيمات
             themeBtn.addEventListener('click', function(e) {
                 e.stopPropagation();
                 themePanel.classList.toggle('show');
-                themeBtn.querySelector('i').classList.toggle('fa-rotate-180');
             });
 
-            // اختيار ثيم جديد
             themeOptions.forEach(option => {
                 option.addEventListener('click', function() {
                     const theme = this.getAttribute('data-theme');
@@ -1418,18 +1474,12 @@
                     updateActiveTheme(theme);
                     localStorage.setItem('siteTheme', theme);
                     themePanel.classList.remove('show');
-                    themeBtn.querySelector('i').classList.remove('fa-rotate-180');
-                    
-                    // تأثير صوتي بسيط (اختياري)
-                    playClickSound();
                 });
             });
 
-            // إغلاق اللوحة عند النقر خارجها
             document.addEventListener('click', function(e) {
                 if (!themeBtn.contains(e.target) && !themePanel.contains(e.target)) {
                     themePanel.classList.remove('show');
-                    themeBtn.querySelector('i').classList.remove('fa-rotate-180');
                 }
                 if (!document.getElementById('menuBtn').contains(e.target) && 
                     !document.getElementById('menuPanel').contains(e.target)) {
@@ -1437,12 +1487,8 @@
                 }
             });
 
-            // تطبيق الثيم
             function applyTheme(theme) {
-                // إزالة جميع فئات الثيمات
-                body.classList.remove('dark-mode', 'light-mode', 'glass-mode', 'neon-mode');
-                
-                // إضافة فئة الثيم الجديد
+                body.className = '';
                 switch(theme) {
                     case 'light':
                         body.classList.add('light-mode');
@@ -1454,11 +1500,10 @@
                         body.classList.add('neon-mode');
                         break;
                     default:
-                        body.classList.add('dark-mode');
+                        body.classList.add('solo-mode');
                 }
             }
 
-            // تحديث الخيار النشط
             function updateActiveTheme(activeTheme) {
                 themeOptions.forEach(opt => {
                     opt.classList.toggle('active', opt.getAttribute('data-theme') === activeTheme);
@@ -1466,7 +1511,7 @@
             }
 
             // ============================================
-            // 📋 نظام القائمة الجانبية
+            // 📋 القائمة والصفحات
             // ============================================
             const menuBtn = document.getElementById('menuBtn');
             const menuPanel = document.getElementById('menuPanel');
@@ -1477,45 +1522,26 @@
                 menuPanel.classList.toggle('show');
             });
 
-            // ============================================
-            // 🔄 نظام تبديل الصفحات
-            // ============================================
             window.showPage = function(pageId) {
-                // إخفاء جميع الصفحات
                 document.querySelectorAll('.page').forEach(page => {
                     page.classList.remove('active');
                 });
                 
-                // إظهار الصفحة المطلوبة
                 const targetPage = document.getElementById(pageId);
                 if (targetPage) {
                     targetPage.classList.add('active');
-                    
-                    // تحديث العنصر النشط في القائمة
                     menuItems.forEach(item => {
                         item.classList.toggle('active', item.getAttribute('data-page') === pageId);
                     });
                 }
                 
-                // إغلاق القائمة
                 menuPanel.classList.remove('show');
-                
-                // التمرير للأعلى بسلاسة
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-                
-                // تشغيل تأثيرات الدخول للعناصر
                 setTimeout(animateOnScroll, 100);
-                
-                // تأثير صوتي
-                playClickSound();
             };
 
-            // ============================================
-            // ✨ تأثيرات التمرير والظهور
-            // ============================================
             function animateOnScroll() {
                 const elements = document.querySelectorAll('.animate-on-scroll');
-                
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
@@ -1526,176 +1552,152 @@
                 
                 elements.forEach(el => observer.observe(el));
             }
-
-            // تشغيل تأثيرات الظهور عند التحميل
             animateOnScroll();
 
             // ============================================
-            // 📧 معالجة نموذج التواصل
+            // 📧 نموذج التواصل - الإصدار المُصلح
             // ============================================
             const contactForm = document.getElementById('contactForm');
             const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
             const submitBtn = contactForm?.querySelector('.submit-btn');
 
             if (contactForm) {
                 contactForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
                     
-                    // تعطيل الزر وإظهار حالة التحميل
-                    const originalBtnText = submitBtn.innerHTML;
+                    // حفظ حالة الزر الأصلية
+                    const originalBtnHTML = submitBtn.innerHTML;
                     submitBtn.disabled = true;
-                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-left: 0.5rem;"></i> جاري الإرسال...';
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span class="system-text">[ SENDING ]</span> جاري الإرسال...';
+                    
+                    // إخفاء الرسائل السابقة
+                    successMessage.classList.remove('show');
+                    errorMessage.classList.remove('show');
                     
                     try {
-                        // محاكاة إرسال النموذج (يمكن استبدالها بـ fetch حقيقي)
-                        await new Promise(resolve => setTimeout(resolve, 1500));
+                        // جمع بيانات النموذج
+                        const formData = new FormData(contactForm);
                         
-                        // إظهار رسالة النجاح
-                        successMessage.classList.add('show');
+                        // إرسال باستخدام Fetch API (أكثر موثوقية)
+                        const response = await fetch(contactForm.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
                         
-                        // إعادة تعيين النموذج
-                        contactForm.reset();
+                        const result = await response.json();
                         
-                        // إخفاء الرسالة بعد 5 ثوانٍ
-                        setTimeout(() => {
-                            successMessage.classList.remove('show');
-                        }, 5000);
+                        if (response.ok) {
+                            // ✅ النجاح
+                            successMessage.classList.add('show');
+                            contactForm.reset();
+                            
+                            // تأثير صوتي بسيط (اختياري)
+                            playSuccessSound();
+                            
+                        } else {
+                            // ❌ خطأ من الخادم
+                            throw new Error(result.message || 'فشل الإرسال');
+                        }
                         
                     } catch (error) {
-                        console.error('Error sending message:', error);
-                        alert('عذراً، حدث خطأ أثناء إرسال الرسالة. يرجى المحاولة لاحقاً.');
+                        console.error('FormSubmit Error:', error);
+                        
+                        // محاولة بديلة باستخدام mailto كاحتياط
+                        fallbackEmailSend();
+                        
                     } finally {
-                        // إعادة تفعيل الزر
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = originalBtnText;
+                        // إعادة الزر لحالته الأصلية
+                        setTimeout(() => {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalBtnHTML;
+                        }, 1000);
                     }
                 });
             }
 
-            // ============================================
-            // 🔊 دالة تشغيل صوت النقر (اختياري)
-            // ============================================
-            function playClickSound() {
-                // يمكن إضافة صوت هنا إذا رغبت
-                // const audio = new Audio('click.mp3');
+            // دالة الصوت للنجاح (اختياري)
+            function playSuccessSound() {
+                // يمكن إضافة ملف صوتي هنا
+                // const audio = new Audio('success.mp3');
                 // audio.volume = 0.3;
                 // audio.play().catch(() => {});
             }
 
             // ============================================
-            // ⌨️ دعم لوحة المفاتيح للتنقل
+            // 🔄 طريقة بديلة للإرسال (Fallback)
+            // ============================================
+            function fallbackEmailSend() {
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                const subject = encodeURIComponent('🎮 رسالة من موقع جرجس أشرف');
+                const body = encodeURIComponent(
+                    `الاسم: ${name}\nالبريد: ${email}\n\nالرسالة:\n${message}\n\n---\nأرسلت من: ${window.location.href}`
+                );
+                
+                // فتح تطبيق البريد الافتراضي
+                window.location.href = `mailto:gerges12gerges34@gmail.com?subject=${subject}&body=${body}`;
+                
+                // إظهار رسالة توضيحية
+                const fallbackMsg = document.createElement('div');
+                fallbackMsg.className = 'success-message show';
+                fallbackMsg.innerHTML = '<i class="fas fa-info-circle"></i> <span class="system-text">[ INFO ]</span> سيتم فتح تطبيق البريد لإرسال رسالتك 📧';
+                
+                const form = document.getElementById('contactForm');
+                form.parentNode.insertBefore(fallbackMsg, form);
+                
+                setTimeout(() => fallbackMsg.remove(), 5000);
+            }
+
+            // ============================================
+            // ⌨️ اختصارات لوحة المفاتيح
             // ============================================
             document.addEventListener('keydown', function(e) {
-                // Esc لإغلاق القوائم
                 if (e.key === 'Escape') {
                     themePanel.classList.remove('show');
                     menuPanel.classList.remove('show');
-                    themeBtn.querySelector('i')?.classList.remove('fa-rotate-180');
                 }
                 
-                // اختصارات لوحة المفاتيح
                 if (e.ctrlKey || e.metaKey) {
                     switch(e.key.toLowerCase()) {
-                        case '1':
-                            e.preventDefault();
-                            showPage('home');
-                            break;
-                        case '2':
-                            e.preventDefault();
-                            showPage('social');
-                            break;
-                        case '3':
-                            e.preventDefault();
-                            showPage('contact');
-                            break;
+                        case '1': e.preventDefault(); showPage('home'); break;
+                        case '2': e.preventDefault(); showPage('social'); break;
+                        case '3': e.preventDefault(); showPage('contact'); break;
                     }
                 }
             });
 
             // ============================================
-            // 📱 تحسينات للجوال
+            // 🎯 تحسينات إضافية
             // ============================================
             // منع التكبير المزدوج على الجوال
             let lastTouchEnd = 0;
             document.addEventListener('touchend', function(event) {
                 const now = Date.now();
-                if (now - lastTouchEnd <= 300) {
-                    event.preventDefault();
-                }
+                if (now - lastTouchEnd <= 300) event.preventDefault();
                 lastTouchEnd = now;
             }, false);
 
-            // ============================================
-            // 🎯 تحسين أداء الصور (Lazy Loading)
-            // ============================================
+            // تحسين أداء الصور
             if ('loading' in HTMLImageElement.prototype) {
-                // المتصفح يدعم lazy loading الأصلي
-                const images = document.querySelectorAll('img[loading="lazy"]');
-                images.forEach(img => {
+                document.querySelectorAll('img[loading="lazy"]').forEach(img => {
                     img.src = img.dataset.src || img.src;
                 });
-            } else {
-                // تحميل مكتبة lazy loading للبراوزرات القديمة
-                const script = document.createElement('script');
-                script.src = 'https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/17.8.3/lazyload.min.js';
-                script.onload = function() {
-                    new LazyLoad({ elements_selector: 'img[loading="lazy"]' });
-                };
-                document.body.appendChild(script);
             }
 
-            // ============================================
-            // 📊 تحليلات بسيطة (يمكن ربطها بـ Google Analytics)
-            // ============================================
-            function trackPageView(pageName) {
-                console.log(`📊 Page View: ${pageName}`);
-                // هنا يمكنك إضافة كود Google Analytics أو أي أداة تحليلات
-                // gtag('event', 'page_view', { page_title: pageName });
-            }
-
-            // تتبع تغيير الصفحات
-            const originalShowPage = window.showPage;
-            window.showPage = function(pageId) {
-                originalShowPage(pageId);
-                trackPageView(pageId);
-            };
-
-            // ============================================
-            // 🎨 تأثيرات إضافية للماوس
-            // ============================================
-            // إضافة تأثير تتبع الماوس (اختياري - يمكن تفعيله)
-            /*
-            document.addEventListener('mousemove', function(e) {
-                const cursor = document.querySelector('.custom-cursor');
-                if (cursor) {
-                    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-                }
-            });
-            */
-
-            console.log('✨ موقع جرجس أشرف الشخصي - تم التحميل بنجاح');
-            console.log('🎨 التصميم: احترافي وعصري مع دعم 4 ثيمات');
-            console.log('📱 متجاوب مع جميع أحجام الشاشات');
-            console.log('⚡ محسن للأداء مع Lazy Loading و Intersection Observer');
-        });
-
-        // ============================================
-        // 🛡️ حماية أساسية من النسخ (اختياري)
-        // ============================================
-        document.addEventListener('contextmenu', function(e) {
-            // يمكن تفعيل هذا لمنع القائمة اليمنى إذا رغبت
-            // e.preventDefault();
-        });
-
-        document.addEventListener('keydown', function(e) {
-            // منع Ctrl+U و Ctrl+S و F12 (اختياري)
-            // if (e.ctrlKey && (e.key === 'u' || e.key === 's') || e.key === 'F12') {
-            //     e.preventDefault();
-            // }
+            console.log('⚔️ Solo Leveling System Loaded');
+            console.log('🎮 Player: Georges Ashraf');
+            console.log('📧 Email System: FIXED ✓');
+            console.log('✨ Background: Solo Leveling Theme Active');
         });
     </script>
     
-    <!-- Schema.org structured data for SEO -->
+    <!-- Schema.org SEO Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1711,12 +1713,9 @@
         "https://wa.me/201208898875"
       ],
       "jobTitle": "Web Designer & Developer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Freelance"
-      },
+      "worksFor": { "@type": "Organization", "name": "Freelance" },
       "nationality": "EG",
-      "description": "الموقع الشخصي الرسمي لجورجس أشرف - مصمم ومطور ويب محترف من مصر"
+      "description": "الموقع الشخصي الرسمي لجورجس أشرف - مصمم ومطور ويب محترف من مصر | Solo Leveling Theme"
     }
     </script>
 </body>
